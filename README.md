@@ -49,7 +49,7 @@ Although I created the site myself, various libraries, technologies, APIs were u
 - [JS Dynamic AutoSynth](https://keithwhor.com/music/)
 - [jQuery VectorMaps](http://jvectormap.com)
 
-Thanks so much for checking it out! Leave a like or a comment if you've got some feedback, I'd love to hear it :)
+Thanks so much for checking it out! Leave a start or create an issue if you've got some feedback, I'd love to hear it :)
 
 Also be sure to check us out on social media for updates & news:
 https://twitter.com/synthsource
