@@ -53,3 +53,10 @@ Thanks so much for checking it out! Leave a like or a comment if you've got some
 
 Also be sure to check us out on social media for updates & news:
 https://twitter.com/synthsource
+
+# Recognition
+
+- Featured in repl.it's weekly newsletter!
+- Repl.it project of the week (July 28th - August 3rd)
+- "I would pay for this App. The creativity we're seeing is so energizing." - Haya Odeh, co-founder @ https://repl.it
+- "This is amazing" - Amjad Masad, co-founder/CEO @ https://repl.it
