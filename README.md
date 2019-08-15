@@ -56,7 +56,7 @@ https://twitter.com/synthsource
 
 # Recognition
 
-- [Featured in repl.it's weekly newsletter!](https://replit-newsletter-57--katyadee.repl.co/)
+- [Featured in repl.it's weekly newsletter!](https://replit-newsletter-57--katyadee.repl.co/) (sent to 2 million+ users)
 - [Repl.it project of the week](https://repl.it/talk/announcements/APP-OF-THE-WEEK-SamDevzs-SynthSource/17125) (July 28th - August 3rd)
 - ["I would pay for this App. The creativity we're seeing is so energizing."](https://twitter.com/HayaOdeh/status/1153383569219186688) - Haya Odeh, co-founder @ https://repl.it
 - "This is amazing" - Amjad Masad, co-founder/CEO @ https://repl.it
