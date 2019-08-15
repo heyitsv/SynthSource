@@ -56,7 +56,7 @@ https://twitter.com/synthsource
 
 # Recognition
 
-- Featured in repl.it's weekly newsletter!
+- [Featured in repl.it's weekly newsletter!](https://replit-newsletter-57--katyadee.repl.co/)
 - Repl.it project of the week (July 28th - August 3rd)
-- "I would pay for this App. The creativity we're seeing is so energizing." - Haya Odeh, co-founder @ https://repl.it
+- ["I would pay for this App. The creativity we're seeing is so energizing."](https://twitter.com/HayaOdeh/status/1153383569219186688) - Haya Odeh, co-founder @ https://repl.it
 - "This is amazing" - Amjad Masad, co-founder/CEO @ https://repl.it
