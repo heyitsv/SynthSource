@@ -1,0 +1,58 @@
+.modal-title {
+  color: #323d47 !important;
+}
+
+
+.btn {
+    font-size: 12px;
+    padding: 8px 26px 6px;
+    letter-spacing: 1.7px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    outline: none;
+    -webkit-transition: 0.15s linear;
+    transition: 0.15s linear;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+
+.btn-secondary:hover {
+    color: #757575 !important;
+    background-color: #dde2e8;
+    border-color: #dde2e8;
+    -webkit-box-shadow: 0 1px 10px rgba(233, 236, 240, 0.4);
+    box-shadow: 0 1px 10px rgba(233, 236, 240, 0.4);
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #3c96ff;
+    border-color: #3c96ff;
+    -webkit-box-shadow: 0 1px 10px rgba(80, 161, 255, 0.4);
+    box-shadow: 0 1px 10px rgba(80, 161, 255, 0.4);
+}
+
+.btn:hover, .btn:focus {
+    text-decoration: none;
+}
+
+.btn-secondary {
+  color: #757575 !important;
+  background-color: #e9ecf0;
+  border-color: #e9ecf0; }
+
+  .bootbox-close-button  {
+    color: #323d47 !important;
+  }
+
+  .form-control:focus {
+    color: #323d47 !important;
+    margin-top: 20px;
+    background-color: #fff;
+    border-color: #f1f2f3;
+    outline: 0;
+    -webkit-box-shadow: 0 0 40px rgba(0, 0, 0, 0.045);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.045); }
+

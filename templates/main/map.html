@@ -1,0 +1,403 @@
+<html>
+<head>
+  <link rel="stylesheet" href="/static/jquery-jvectormap-2.0.3.css" type="text/css" media="screen"/>
+  
+  <style>
+
+        @font-face{font-family:TT Norms;src:url(/static/TTNorms-Regular.woff2) format("woff2");font-display:block}@font-face{font-family:TT Norms Bold;src:url(/static/TTNorms-Bold.woff2) format("woff2");font-display:block}@font-face{font-family:TT Norms Medium;src:url(/static/TTNorms-Medium.woff2) format("woff2");font-display:block}
+
+
+      #world-map {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        margin-left: -1%;
+        margin-top: 162px;
+      }
+      body {
+        width: 100%;
+        height: 100%;
+        background-color: #080c17;
+        max-height: 100%;
+        overflow-y: hidden;
+      }
+
+      .jvectormap-zoomin,.jvectormap-zoomout {
+        display: none;
+      }
+
+      #lowrow {
+        background-color: #080c17;
+        width: 101%;
+        margin-left: -1%;
+        height: 90px;
+        bottom: 0;
+        position: absolute;
+        box-shadow: 0px 10px 30px 0px rgba(255,255,255,0.03);
+        border-top: 5px solid rgba(40,40,40,0.2);
+      }
+
+      #mtitle {
+        position: absolute;
+        color: rgb(119, 185, 232);
+        font-family: TT Norms Bold !important;
+        z-index: 1000;
+        font-size: 77.5px;
+        margin-top: -146.5px;
+        width: 100%;
+        text-align: center;
+      }
+
+      #smain {
+        width: 100%;
+        text-align: center;
+        color: rgba(255,255,255,0.8);
+        /* color: rgb(180, 180, 180); */
+        font-family: TT Norms, sans-serif;
+        font-weight: 300;
+        font-size: 31px;
+
+      }
+      
+      #cont {
+        position: absolute;
+        background-color: rgb(119, 185, 232);
+        z-index: 100;
+        outline: none;
+        border: none;
+        padding: 32px;
+        padding-left: 30px;
+        padding-right: 30px;
+        bottom: 2px;
+        color: white;
+        border-radius: 10px;
+        font-family: TT Norms Medium;
+        font-size: 17.5px;
+        left: 0px;
+        cursor: pointer;
+        opacity: 0.4;
+        transition: 1s all;
+
+      }
+
+      #cont:hover {
+        opacity: 0.75;
+      }
+
+
+       #cont2 {
+        position: absolute;
+        background-color: rgb(119, 185, 232);
+        z-index: 100;
+        outline: none;
+        border: none;
+        padding: 32px;
+        padding-left: 30px;
+        padding-right: 30px;
+        bottom: 2px;
+        color: white;
+        border-radius: 10px;
+        font-family: TT Norms Medium;
+        font-size: 17.5px;
+        right: 0px;
+        cursor: pointer;
+        opacity: 0.4;
+        transition: 1s all;
+
+      }
+
+       #cont2:hover {
+        opacity: 0.75;
+      }
+
+      #leftcontain {
+          position: absolute; 
+          left: 0;
+          top: 0;
+          width: 450px;
+          height: 100%;
+          /* box-shadow: 0px 10px 30px 0px rgba(0,0,0,0.5; */
+          z-index: 200;
+          background-color: rgba(8, 12, 23, 1);
+          border-top-right-radius: 25px;
+          border-bottom-right-radius: 25px;
+          box-shadow: 0 10px 30px 0 rgba(73,85,114,.15);
+          overflow-y: scroll;
+          margin-left: -500px;
+
+
+
+      }
+
+      #locimg {
+        width: 330px;
+        height: 250px;
+        margin: 0px auto;
+        display: block;
+        margin-top: 50px;
+        border-radius: 10px;
+        box-shadow: 0px 10px 30px 0px rgba(255,255,255,0.075);
+        transition: 0.5s all;
+        cursor: pointer;
+      }
+
+      #locimg:hover {
+        transform: scale(1.02);
+      }
+
+      #pname {
+        font-size: 30px;
+        color: white;
+        font-family: TT Norms;
+        text-align: center; 
+        margin-top: 40px;
+      }
+
+      #mhr {
+        opacity: 0.25;
+        margin-top: 50px;
+        color:  rgb(119, 185, 232) !important;
+        background-color:  rgb(119, 185, 232) !important;
+        border-color: rgb(119, 185, 232) !important;
+        /* background-color: rgba(255,255,255, 0.1); */
+      }
+
+      .fact {
+        width: 90%;
+        margin: 0px auto;
+        height: 105px;
+        box-shadow: 0px 10px 30px 0px rgba(0,0,0,0.11);
+        border: 2px solid rgba(119, 185, 232, 0.05); 
+        margin-top: 50px;
+        transition: 0.5s all;
+        display: flex;
+        flex-direction: row;
+
+
+      }
+
+      .fact:hover {
+        transform: scale(1.005);
+      }
+
+
+      .fend {
+        margin-bottom: 50px;
+      }
+
+      .thumb {
+        width: 80px;
+        height: 80px;
+        margin-top: 12px;
+        margin-left: 12px;
+        border-radius: 5px;
+      }
+
+      .vname {
+        color: white !important;
+        font-family: TT Norms Medium !important;
+        font-size: 20px;
+        margin-left: 30px;
+        margin-top: 20px;
+      }
+
+      .vcontrol {
+        width: 27px;
+        height: 27px;
+        position: absolute;
+        margin-top: 57px;
+        margin-left: 120px;
+        opacity: 0.8;
+        cursor: pointer;
+      }
+
+  </style>
+
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+
+  <script src="/static/jquery-jvectormap-2.0.3.min.js"></script>
+  <script src="/static/jquery-jvectormap-world-mill.js"></script>
+  <script src="/static/cinfo.js"> </script>
+</head>
+<body>
+  <div id="leftcontain">
+    <img id="locimg" src="/static/saus.jpg"/>
+    <h1 id="pname">Sidney, Australia</h1>
+    <hr id="mhr"/>
+    <span id="mhr2">
+
+   
+    </span>
+  </div>
+  <span class="other">
+  <h1 id="mtitle">World of Music</h1>
+  <div id="world-map"></div>
+   <div id="lowrow"> 
+     <h2 id="smain">Currently viewing - World Overview </h2>
+     <button id="cont">← Back</button>
+    <button id="cont2">Continue →</button>
+   </div>
+  </span>
+   
+</body>
+  <script>
+
+    window.activePlayers = {}
+
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var mhr = document.getElementById('mhr2');
+
+
+    $('#cont, #cont2').click( () => {
+        window.location.href = '/start/';
+    }); 
+
+window.allKeys = ["AIzaSyAyvJEAQMbzHVm3echXE7vrNAdgeHO5Avg", "AIzaSyCR-BW8dqrk55sXoGVTW7KDZfZAmpcvx1E", "AIzaSyDp_U_sh3FUuI_aZu_mm1KOl90cTX5_YUo",
+"AIzaSyCMwVR2ZnaKncTtWaOcCZyb6BtCHp4jL8g",
+"AIzaSyDGNUfp64M9dI36hcSVpKMZ-jT2I7xOoWM",
+"AIzaSyBOgOkcBMtbkuH7sAQJWXhxsArMhMNhzck",
+"AIzaSyCmqDiIbkcbOXm5Q-EuyM1-XiMpwCt8IPg",
+"AIzaSyAarA00saUlIrFwrIMw3Ni2H6xTWOpifxU",
+"AIzaSyAX1AbPvEd2D3P3WgIC7s1whKLUsKPEekQ",
+"AIzaSyD7AtR5k0KhNPhheTf9j32wjidhAuUYTHg"]
+
+  window.currentIndex = Math.floor(Math.random()*window.allKeys.length);
+
+
+  window.controls = {p0: {}, p1: {}, p2: {}};
+
+
+    $(document).on('click', '.other *', (e) => {
+        window.controls = {p0: {}, p1: {}, p2: {}};
+        if (e.target.tagName !== "path"){
+             $('#leftcontain').animate({marginLeft: -500}, {
+              duration: 750,
+            });
+        }
+    });
+
+    $(document).on('click', '.vcontrol', (e) => {
+        if (window.controls[e.target.id].isPlaying){
+          window.controls[e.target.id].isPlaying = false;
+          window.controls[e.target.id].ct.pauseVideo();
+          $(e.target).attr('src', '/static/pwhite.png');
+          return; 
+        } else if (window.controls[e.target.id].ct){
+          window.controls[e.target.id].ct.playVideo();
+          window.controls[e.target.id].isPlaying = true;
+          $(e.target).attr('src', '/static/whitep.png');
+          return;
+        }
+       let pt = $(e.target).parent()[0];
+       let cid = e.target.id.replace('p','');
+       let vid = pt.getAttribute('data-video-id');
+      //  window.open(`https://www.youtube.com/watch?v=${vid}&feature=youtu.be`, '_blank');
+      // window[e.target.id].playVideo();
+      let player = new YT.Player("player"+cid, {
+            height: '0',
+            width: '0',
+            videoId: vid,
+            events: {
+                'onReady': (event) => {
+                    event.target.playVideo();
+                    window.controls[e.target.id].ct = event.target;
+                    window.controls[e.target.id].isPlaying = true;
+                    $(e.target).attr('src', '/static/whitep.png');
+                }
+            }
+        });
+    });
+
+
+
+    $('#world-map').css({height: window.innerHeight*0.65});
+    var mainMap = window.mainMap = $('#world-map').vectorMap({map: 'world_mill', backgroundColor: "#080c17",
+          regionStyle: {
+              initial: {
+                fill: '#282828'
+              },
+              selected: {
+                fill: 'rgb(119, 185, 232)' 
+              }
+          },
+          zoomOnScroll: false,
+          regionsSelectable: true,
+          onRegionSelected: function(event, selectedRegions, isSelected){
+            if (!isSelected) return;
+            mhr.innerHTML = ``;
+            $('#leftcontain').animate({marginLeft: 0}, {
+              duration: 750,
+            });
+
+            let rgname = selectedRegions;
+            var map = $('#world-map').vectorMap('get', 'mapObject');
+            let cname = map.getRegionName(rgname);
+            let capital;
+            let demonym; 
+            for (let cval of window.cinfo){
+              if (cval.alpha2Code == rgname){
+                console.log(cval);
+                capital = cval.capital;
+                demonym = cval.demonym;
+                break;
+              }
+            }
+            let mtext = `${capital}, ${cname}`
+            $('#pname').text(mtext);
+
+            let mtextEncoded = cname.replace(', ', ' ').replace(/ /g, '+').replace(/\./g, '')
+
+            let apiget = `https://pixabay.com/api/?key=13099081-202000ee83d291b42f4fc2eab&q=${mtextEncoded}&image_type=photo&orientation=horizontal&safesearch=true&category=places`;
+
+            fetch(apiget).then(resp=>resp.json()).then(resJson => {
+                let mainImage = resJson.hits[0];
+                let murl = mainImage.largeImageURL;
+                
+                $('#locimg').attr('src', murl);
+
+            });
+
+           $.getJSON('https://www.googleapis.com/youtube/v3/search', {
+                part: 'snippet',
+                key: window.allKeys[window.currentIndex],
+                q: `${demonym} music`,
+                videoEmbeddable: true,
+                type: 'video',
+              }, (result) => { 
+                  mhr.innerHTML = ``;
+                  for (var i=0;i<3;i++){ 
+                    let focusRes = result.items[i];
+                    vidID = focusRes.id.videoId; 
+                    let tnail = focusRes.snippet.thumbnails.high.url;
+                    let title = focusRes.snippet.title;
+                    mhr.innerHTML += ` <div data-video-id="${vidID}" class="fact ${i==2?"fend":""}">
+                    <div id="player${i}"></div>
+        <img src="${tnail}" class="thumb"/>
+        <h1 class="vname">${title.substring(0,22)}</h1>
+        <img id="p${i}" src="/static/pwhite.png" class="vcontrol"/>
+    </div>`
+           
+
+
+                  
+                  }
+
+              })
+
+           
+            
+          },
+          regionsSelectableOne: true,
+          
+          });
+  </script>
+</html>

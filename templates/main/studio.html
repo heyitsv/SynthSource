@@ -1,0 +1,593 @@
+<html>
+  <head>
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:100,200,300,400,500&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Encode+Sans:100,200,300,400,500&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css" rel="stylesheet">
+    <link href="https://cdn.materialdesignicons.com/3.7.95/css/materialdesignicons.min.css" rel="stylesheet">
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+      <style>
+
+        @font-face{font-family:TT Norms;src:url(/static/TTNorms-Regular.woff2) format("woff2");font-display:block}@font-face{font-family:TT Norms Bold;src:url(/static/TTNorms-Bold.woff2) format("woff2");font-display:block}@font-face{font-family:TT Norms Medium;src:url(/static/TTNorms-Medium.woff2) format("woff2");font-display:block}
+
+
+          body {
+            background-color: rgb(19, 28, 47);
+          }
+
+          * {
+            font-family: "Nunito Sans", sans-serif !important;
+            color: white !important;
+          }
+
+               .custom-navbar {
+          display: flex;
+          flex-direction: row;
+          margin-top: 25px;
+          margin-bottom: -25px;
+          justify-content: space-between;
+        }
+
+        #logo-icon {
+          width: 50px;
+          height: 50px;
+        }
+
+        #placetitle {
+          display: flex;
+          flex-direction: row;
+          margin-left: 50px;
+          
+        }
+
+        #mtitle {
+          font-size: 37.5px;
+          margin-left: 15px;
+        }
+
+        #sgnin {
+            font-size: 22.5px;
+            margin-right: 40px;
+            font-weight: 300;
+            opacity: 0.0;
+            cursor: pointer;
+            transition: 0.5s all; 
+        }
+
+        #signin:hover {
+          opacity: 0;
+        }
+
+        .recline {
+          background-color: rgba(50,50,50, 0.55);
+        }
+
+        #recimg {
+          width: 62.5px;
+          height: 62.5px;
+          margin: 10px auto;
+          display: block;
+          opacity: 0.8; /*0.7 for square*/
+          cursor: pointer !important;
+          /* transition: 0.5s all; */
+        }
+
+        #recimg:hover {
+          opacity: 1;
+        }
+
+        #recordcenter {
+          margin-top: 140px;
+
+        }
+
+          b { font-weight: bold; }
+
+	.key { position: absolute; font-family: Helvetica; font-weight: 100; font-size: 12px;
+		border: 1px solid rgba(32,32,32,0.2);
+		border-radius: 0px 0px 5px 5px;
+		cursor:pointer;
+		box-shadow: 0px 5px 1px rgba(32,32,32,0.2);
+		-webkit-transition: margin 0.05s ease, background-color 0.05s ease, box-shadow 0.05s ease; 
+    transition: 0.5s all;
+    }
+	.key:hover { opacity: 0.9; }
+		
+	.key .label { position: absolute; bottom: 5px; text-align: center; left: 0px; right: 0px; }
+
+	.black { background-color: rgb(32,32,32); color: #ffffff; z-index: 1; text-shadow: 0px -1px 1px rgba(255,255,255,0.5); }
+	
+	.white { background-color: rgba(255,255,255,1); color: rgb(32,32,32); z-index: 0; text-shadow: 0px 1px 1px rgba(32,32,32,0.5); }
+
+.keyboard-options { margin: 30px auto; width: auto; text-align: center; font-size: 12px; font-weight: 200; padding:10px; }
+
+	.keyboard-holder { margin: 30px auto; height: 200px; position:relative; user-select:none; -webkit-user-select:none;-moz-user-select:none;-o-user-select:none; margin-top: 85px;}
+
+  #keyboard {
+    padding-left: 40px;
+    margin: 0px auto;
+    margin-top: 30px;
+    /* opacity: 0.9; */
+  }
+
+  #q-contain {
+    width: 1000px;
+    height: 450px;
+    margin: 0px auto;
+    /* border: 0.5px solid rgba(255,255,255,0.2); */
+    margin-top: 100px;
+
+  }
+
+  .q-title {
+    font-size: 30px;
+    margin-left: 25px;
+    margin-top: 25px;
+
+  }
+
+  .a-holder {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pretty {
+    margin-top: 35px;
+    margin-left: 50px;
+    font-size: 17.5px;
+  }
+
+  .optionText {
+    /* font-size: 17.5px; */
+  }
+
+
+  #instruments-container-1 {
+    /* box-shadow: 0 10px 30px 0 rgba(73,85,114,.22); */
+    
+  }
+
+  .choiceimg {
+    width: 125px;
+    height: 125px;
+    border: 1px solid rgb(15,15,15);
+    padding: 27.5px;
+    opacity: 0.6;
+    border-radius: 12.5px;
+    cursor: pointer;
+    transition: 1s all;
+    background-color: rgba(0,0,0,0.2)
+
+  }
+
+  .choiceimg:hover {
+    opacity: 1;
+  }
+
+  .chosen {
+    opacity: 1 !important;
+  }
+
+  #ptypes {
+    width: 700px;
+    margin: 0px auto;
+    margin-top: 90px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+
+  }
+
+  #drums {
+    width: 165px;
+    height: 165px;
+    margin: 0px auto;
+    display: block;
+    margin-top: 65px;
+    opacity: 0.9;
+    cursor: pointer;
+    transition: 0.25s all;
+  }
+
+  #cymbals {
+    width: 165px;
+    height: 165px;
+    margin: 0px auto;
+    display: block;
+    margin-top: 65px;
+    opacity: 0.9;
+    cursor: pointer;
+    transition: 0.25s all;
+  }
+
+  #drums:hover, #cymbals:hover {
+    opacity: 1;
+    transform: scale(1.01);
+  }
+
+  #lastinsts {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px 0 rgba(73,85,114,.22);
+    border-radius: 25px;
+    /* justify-content: space-evenly; */
+  }
+
+  @media only screen and (max-width: 1433px){
+      #lastinsts { 
+        /* box-shadow: none; */
+        /* opacity: 0.5; */
+        /* margin-left: 5%; */
+        margin-left: 40px;
+      }
+  }
+
+  #middlestyle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: space-evenly; */
+
+  }
+
+  #savecontinue {
+    width: 205px;
+    height: 75px;
+    background-color: #6ee07d;
+    border: none;
+    outline: none;
+    font-size: 20.5px;
+    margin-right: 45px;
+    cursor: not-allowed;
+    font-family: TT Norms !important;
+    border-radius: 22.5px;
+    opacity: 0.6;
+    transform: scale(0.875);
+    margin-left: -250px;
+
+  }
+
+  #backimg {
+    width: 53px;
+    height: 53px;
+    margin: 0px auto;
+    display: block;
+    position: relative;
+    left: -90px;
+    top: -100px;
+    opacity: 0.0;
+    /* cursor: pointer; */
+
+  }
+
+        </style>
+    </head>
+    <body>
+       <div class="custom-navbar">
+          <div id="placetitle">
+        <img id="logo-icon" src="https://i.redd.it/o6m7b0l6h6pz.gif"/>
+        <h1 id="mtitle">SynthSource</h2>
+        </div>
+        <h1 id="sgnin">Sign In</h1>
+      </div>
+
+      <div class="row">
+      <div  class="col col-sm-8" id="instruments-container-1">
+
+        <div id="ptypes"> 
+
+          <div data-keyval="2" id="guitar" class="imgcontain"><img data-keyval="2" class="choiceimg chosen" src="/static/electric-guitar.png"/> </div>
+
+           <div data-keyval="0" id="piano" class="imgcontain"><img data-keyval="0" class="choiceimg" src="/static/pianoflat.png"/> </div>
+
+            <div  data-keyval="1" id="organ" class="imgcontain"><img  data-keyval="1" class="choiceimg" src="/static/organ.png"/> </div>
+
+             <div data-keyval="3" id="edm" class="imgcontain"><img data-keyval="3" class="choiceimg" src="/static/edm.png"/> </div>
+
+             
+
+        </div>
+      
+     
+
+          <div class="keyboard-options">
+        <select style="display: none;" ID="sound">
+          <option value="0">Keyboard</option>
+          <option value="1">Organ</option>
+            <option value="2" selected>Acoustic Guitar</option>
+            <option value="3">Electronic</option>
+        </select>
+        <div ID="keyboard" class="keyboard-holder"></div>
+        <div class="keyboard-options" style="display: none;">
+        Range [C<span ID="OCTAVE_LOWER">3</span>-B<span ID="OCTAVE_UPPER">5</span>]
+        <input type="button" ID="-_OCTAVE" value="-" />
+        <input type="button" ID="+_OCTAVE" value="+" /><br />
+        <i>(Use left/right arrows to adjust with keyboard)</i>
+        </div>
+        </div>
+
+    </div>
+
+     <div id="lastinsts" class="col col-sm-3">
+        <img id="drums" src="/static/drum.png"/>
+
+         <img id="cymbals" src="/static/cmbfinal.png"/>
+
+
+      </div>
+      
+
+    </div>
+
+
+      <div id="recordcenter">
+          <hr class="recline"/>
+          <div id="middlestyle">
+              <img id="recimg" src="/static/record.png"/>
+              <button id="savecontinue">Save & Continue »</button>
+          </div>
+          <hr class="recline"/>
+
+           <img id="backimg" src="/static/trash1.png"/>
+
+      </div>
+
+
+     
+
+
+    </body> 
+</html> 
+<script src="/static/audiosynth.js"></script>
+<script src="/static/pianoview.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.core.min.js"></script>
+
+<script type="text/javascript">
+
+
+  window.localStorage.removeItem('globalRec');
+  window.localStorage.setItem('globalRec', `{{ song.data | safe }}` )
+
+
+  {% if song.isOwner %}
+    var isOwner = true;
+  {% else %}
+    var isOwner = false;
+  {% endif %} 
+
+
+  window.isRecording = false; 
+  window.isPlaying = false;
+  window.soundval = 2;
+  window.canPlay = true;
+
+  var a = new AudioSynthView();
+  a.draw();
+
+  $('.imgcontain').click(function(e){
+    $('.chosen').toggleClass('chosen');
+    $(e.target).toggleClass('chosen');
+    document.getElementById('sound').value = window.soundval = e.target.getAttribute('data-keyval')
+  })
+
+var drums = new Howl({
+  src: ['/static/drums.mp3']
+});
+
+var cymbals = new Howl({
+  src: ['/static/cymbal.mp3']
+});
+
+  function playDrums(){
+    drums.play();
+    $("#drums").css({transform: "scale(1.075)", opacity: 1});
+    setTimeout(() => {
+       $("#drums").css({transform: "scale(1.01)", opacity: 0.9})
+    }, 250);
+
+  }
+
+  function playCymbals(){
+    cymbals.play();
+    $("#cymbals").css({transform: "scale(1.075)", opacity: 1});
+    setTimeout(() => {
+       $("#cymbals").css({transform: "scale(1.01)", opacity: 0.9})
+    }, 250);
+  }
+
+
+    $('#drums').click(function(e){
+        playDrums();
+        if (window.isRecording){
+            window.latestRec["events"].push([new Date().getTime(), "playDrums"])
+        }
+  });
+
+
+  $('#cymbals').click(function(e){
+      playCymbals();
+      if (window.isRecording){
+            window.latestRec["events"].push([new Date().getTime() , "playCymbals"]);
+        }
+  });
+
+  
+
+  document.addEventListener("keydown", function(e){
+    if (window.isRecording){
+     window.latestRec["events"].push([new Date().getTime(), e.keyCode + "|keydown"]);
+    }
+  });
+  
+
+    document.addEventListener("keyup", function(e){
+    if (window.isRecording){
+     window.latestRec["events"].push([new Date().getTime(), e.keyCode + "|keyup"]);
+    }
+  });
+
+
+  function playMusic(){
+    $('.chosen').toggleClass('chosen');
+    $(`[data-keyval="${window.latestRec.soundval}"]`).toggleClass('chosen');
+    document.getElementById('sound').value = window.soundval = window.latestRec.soundval;
+
+    for (let event of window.latestRec.events){
+      setTimeout(function(){
+        let trigger = event[1];
+        if (trigger == "playDrums"){
+          playDrums(); 
+        } else if (trigger == "playCymbals"){
+          playCymbals();
+        } else {
+          let vals = trigger.split("|")
+          let keyCode = parseInt(vals[0]);
+          let keyVal = vals[1];
+
+          if (keyVal == "keydown"){
+              window.fnPlayKeyboard({keyCode: keyCode});
+          } else { //keyup 
+              window.fnRemoveKeyBinding({keyCode: keyCode});
+          }
+
+
+
+
+        } 
+      }, event[0]);
+    }
+
+
+    setTimeout(function(){
+        window.canPlay = true;
+        console.log('set to good');
+    }, window.latestRec.events.sort((a,b)=>b[0]-a[0])[0][0] );
+  }
+
+
+
+  $('#recimg').click(function(e){
+    if (!window.isRecording && !window.isPlaying){ //If we're not currently recording, transition there
+
+        window.latestRec = {events: [], soundval: window.soundval}
+        window.latestRec.start = new Date().getTime() 
+
+        $('#recimg').animate({"opacity": 0}, {
+          duration: 500,
+          complete: function(){
+            $('#recimg').attr("src", "/static/stop.png");
+            $("#recimg").animate({"opacity": 0.7});
+          }
+        });
+
+    } else {
+      if (!window.isPlaying){
+        window.latestRec.end = new Date().getTime()
+        if (window.latestRec.events){
+          let first = window.latestRec.events.map(x=>x[0]).sort((a,b)=>a-b)[0];
+          window.latestRec.events = window.latestRec.events.map(x =>[x[0]-first, x[1]]); 
+        }
+        for (let events of window.latestRec.events){
+
+        }
+        window.isPlaying = true;
+        $('#savecontinue').animate({opacity: 1}, {
+          complete: function(){
+            $('#savecontinue').css({cursor: "pointer"});
+          }
+        })
+        $('#recimg').animate({"opacity": 0}, {
+            duration: 500,
+            complete: function(){
+              $('#recimg').attr("src", "/static/play4.png");
+              $("#recimg").animate({"opacity": 0.8});
+              $('#backimg').animate({opacity: 0.1});
+              $("#backimg").css({cursor: "pointer"});
+            }
+          });
+      } else { //Play music...?
+        if (window.canPlay){
+          window.canPlay = false;
+          window.isRecording = !window.isRecording //Cancel out change
+          playMusic()
+        }
+      }
+    }
+
+    window.isRecording = !window.isRecording; 
+  });
+
+  $('#backimg').click(function(e){
+      if (isPlaying){
+          $('#backimg').animate({opacity: 0.0});
+           $("#backimg").css({cursor: "default"});
+           $('#recimg').animate({"opacity": 0}, {
+            duration: 500,
+            complete: function(){
+              $('#recimg').attr("src", "/static/record.png");
+              $("#recimg").animate({"opacity": 0.7});
+            }
+        });
+      
+        window.isPlaying = false;
+        $('#savecontinue').animate({opacity: 0.6}, {
+          complete: function(){
+            $('#savecontinue').css({cursor: "not-allowed"});
+          }
+        })
+      }
+  });
+
+
+  $('#savecontinue').click(function(e){
+    if (!window.localStorage.globalRec){
+    window.localStorage.setItem('globalRec', JSON.stringify([{
+        "target": new URL(window.location).searchParams.get("target"),
+        "reclogs": window.latestRec,
+        "left": 0,
+    }]));
+    } else {  
+        let currentGlobal = JSON.parse(window.localStorage.globalRec);
+        currentGlobal.push({
+          "target": new URL(window.location).searchParams.get("target"),
+          "reclogs": window.latestRec,
+          "left": 0,
+          "cWidth": window.innerWidth,
+        });
+        window.localStorage.setItem('globalRec', JSON.stringify(currentGlobal));
+    }
+      if (isOwner){
+      $.ajax({
+        url: '/updatesong/',
+        type: "POST",
+        data: {
+          "songid": "{{ song.id | safe}}",
+          "name": "{{ song.name }}",
+          "data": window.localStorage.globalRec,
+
+        },
+        success: function(){
+           window.location.href = document.referrer;
+        }
+      });
+      } else {
+        window.location.href = document.referrer;
+      }
+
+   
+  })
+
+
+ $('#placetitle').css({cursor: "pointer"});
+  $('#placetitle').click(() => {
+      window.location.href = "/";
+  });
+
+</script>

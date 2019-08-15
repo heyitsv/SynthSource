@@ -1,0 +1,302 @@
+<html>
+  <head>
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:100,200,300,400,500&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Encode+Sans:100,200,300,400,500&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css" rel="stylesheet">
+    <link href="https://cdn.materialdesignicons.com/3.7.95/css/materialdesignicons.min.css" rel="stylesheet">
+
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+
+  <link href="/static/drop-theme-arrows-bounce-dark.css" rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/tether-drop/1.4.2/css/drop-theme-arrows.css" rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/tether-drop/1.4.2/css/drop-theme-basic.css" rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/tether-drop/1.4.2/css/drop-theme-hubspot-popovers.css" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.4/js/tether.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether-drop/1.4.2/js/drop.js"></script>
+
+
+
+      <style>
+
+        @font-face{font-family:TT Norms;src:url(/static/TTNorms-Regular.woff2) format("woff2");font-display:block}@font-face{font-family:TT Norms Bold;src:url(/static/TTNorms-Bold.woff2) format("woff2");font-display:block}@font-face{font-family:TT Norms Medium;src:url(/static/TTNorms-Medium.woff2) format("woff2");font-display:block}
+
+
+          body {
+            background-color: rgb(19, 28, 47);
+          }
+
+          * {
+            font-family: "Nunito Sans", sans-serif !important;
+            color: white !important;
+          }
+
+               .custom-navbar {
+          display: flex;
+          flex-direction: row;
+          margin-top: 25px;
+          margin-bottom: -25px;
+          justify-content: space-between;
+        }
+
+        #logo-icon {
+          width: 50px;
+          height: 50px;
+        }
+
+        #placetitle {
+          display: flex;
+          flex-direction: row;
+          margin-left: 50px;
+          
+        }
+
+        #mtitle {
+          font-size: 37.5px;
+          margin-left: 15px;
+        }
+
+        #sgnin {
+            font-size: 22.5px;
+            margin-right: 40px;
+            font-weight: 300;
+            opacity: 0.9;
+            cursor: pointer;
+            transition: 0.5s all; 
+        }
+
+        #signin:hover {
+          opacity: 1;
+        }
+
+        #createnew {
+          width: 200px;
+          height: 100px;
+        }
+
+        .mainrow {
+          width: 90%;
+          margin: 0px auto;
+          margin-top: 45px;
+        }
+
+        .datawrap, .nwrap {
+          border: 3px solid rgb(40,40,40);
+          height: 200px; 
+          max-width: 370px;
+          min-width: 360px;
+          margin-top: 35px;
+          border-radius: 15px;
+          background-color: rgba(60,60,60, 0.15);
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+          margin-right: 60px;
+          cursor: pointer;
+          opacity: 0.9;
+          transition: 0.5s all;
+        }
+
+        .datawrap:hover {
+          opacity: 1;
+          transform: scale(1.01);
+        }
+
+        .nwrap:hover {
+          opacity: 0.6;
+          transform: scale(1.01);
+        }
+
+        .demostart {
+          width: calc(2904px/11);
+          height: calc(1252px/11);
+          /* border-radius: 5px; */
+          margin: 0px auto;
+          margin-top: 15px;
+        }
+
+        .addcircle {
+          width: 76px;
+          height: 76px;
+          margin: 0px auto;
+          margin-top: 30px;
+          
+        }
+
+        .trackname {
+          font-size: 23px;
+          font-weight: 200;
+          margin-top: 19.5px;
+          font-family: TT Norms !important;
+        }
+
+        .nstitle {
+          font-size: 23px;
+          font-weight: 200;
+          margin-top: 29px;
+          font-family: TT Norms !important;
+        }
+
+
+
+        .newsong {
+          opacity: 0.3;
+        }
+
+         #profilerow {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          margin-right: 20px;
+          /* box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.1); */
+          padding: 15px;
+          border-radius: 15px;
+          padding-left: 25px;
+          padding-right: 25px;
+          transition: 0.5s all;
+          margin-top: -19px;
+          cursor: pointer;
+        }
+
+        #profilerow:hover {
+          box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.1);
+        }
+
+        #profilepic {
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+          border: 2.5px solid #0c1221;
+        }
+
+        #uname {
+          font-size: 20px;
+          margin-left: 15px;
+          font-family: TT Norms Medium !important;
+          opacity: 0.8;
+        }
+
+        .sopt {
+            font-size: 18px;
+            font-family: TT Norms Medium !important;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: 0.5s all;
+        }
+
+        .sopt:hover {
+          opacity: 1;
+        }
+
+    
+
+        .menuhr {
+          background-color: rgba(255,255,255,0.2);
+        }
+
+        .drop-content {
+          background-color: #0c1221 !important;
+        }
+
+</style>
+  </head>
+<body>
+    <div class="custom-navbar">
+          <div id="placetitle">
+        <img id="logo-icon" src="https://i.redd.it/o6m7b0l6h6pz.gif"/>
+        <h1 id="mtitle">SynthSource</h2>
+        </div>
+         {% if user.is_authenticated %}
+        <div id="profilerow">
+        <img id="profilepic" src="/static/doctor.png"/>
+        <h3 id="uname">{{ user.username }}</h3>
+        </div>
+        {% else %}
+        <h1 class="wow fadeInUp"  id="sgnin">Sign In</h1>
+        {% endif %}
+      </div>
+
+    <div class="mainrow row">
+      {% for song in songs %}
+      <div data-song-id="{{ song.id }}" class="datawrap col col-sm-4">
+        <img class="demostart" src="/static/demo.png"/>
+        <h1 class="trackname">{{ song.name }}</h1>
+      </div>
+      {% endfor %}
+
+      <div id="newsong" class="nwrap newsong col col-sm-4">
+        <img class="addcircle" src="/static/add-circle.png"/>
+        <h1 class="nstitle">New Song</h1>
+      </div>
+
+    </div>
+
+</body>
+</html>
+
+<script>
+    $('.datawrap').click(function(e){
+        let songID = e.target.getAttribute("data-song-id") || $(e.target).parent()[0].getAttribute("data-song-id")
+        window.location.href = `/editor/?q=${songID}`;
+    });
+
+      try {
+
+   document.getElementById('sgnin').addEventListener("click", function(e){
+      window.location.href ="/login/"
+  });
+
+  } catch(e) {
+
+    var drop = new Drop({
+      target: document.querySelector('#profilerow'),
+      classes: 'drop-theme-arrows-bounce-dark',
+      position: 'bottom right',
+      openOn: 'hover',
+      constrainToWindow: true,
+      constrainToScrollParent: false,
+      content: `<div id="screenrow">
+          <h1 id="create/" class="sopt">Creator Studio</h1>
+          <hr class="menuhr"/>
+          <h1 id="explore/" class="sopt">Song Search</h1>
+          <hr class="menuhr"/>
+          <h1 id="start/" class="sopt">Music Lessons</h1>
+           <hr class="menuhr"/>
+          <h1 id="logout/" class="sopt">Logout</h1>
+      
+      </div>`
+    });
+
+    $(document).on('click', '.sopt', (e) => {
+        window.location.href = `/`+e.target.id;
+    })
+
+  }
+
+  $('#placetitle').css({cursor: "pointer"});
+  $('#placetitle').click(() => {
+      window.location.href = "/";
+  });
+
+  $('#newsong').click( () => {
+      $.ajax({
+          type: "POST",
+          url: '/newsong/',
+          success: function(response){
+            if (response.success){
+              window.location.href = `/editor/?q=${response.songid}`
+            }
+          }
+      });
+  });
+
+</script>

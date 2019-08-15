@@ -1,0 +1,701 @@
+<html>
+
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:100,200,300,400,500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Encode+Sans:100,200,300,400,500&display=swap" rel="stylesheet">
+
+<link href="/static/drop-theme-arrows-bounce-dark.css" rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/tether-drop/1.4.2/css/drop-theme-arrows.css" rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/tether-drop/1.4.2/css/drop-theme-basic.css" rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/tether-drop/1.4.2/css/drop-theme-hubspot-popovers.css" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.4/js/tether.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether-drop/1.4.2/js/drop.js"></script>
+
+
+
+
+
+	<style>
+		@font-face {
+			font-family: TT Norms;
+			src: url(/static/TTNorms-Regular.woff2) format("woff2");
+			font-display: block
+		}
+
+		@font-face {
+			font-family: TT Norms Bold;
+			src: url(/static/TTNorms-Bold.woff2) format("woff2");
+			font-display: block
+		}
+
+		@font-face {
+			font-family: TT Norms Medium;
+			src: url(/static/TTNorms-Medium.woff2) format("woff2");
+			font-display: block
+		}
+
+
+		body {
+			background-color: rgb(19, 28, 47);
+		}
+
+		* {
+			font-family: "Nunito Sans", sans-serif !important;
+			color: white !important;
+		}
+
+
+
+		.custom-navbar {
+			display: flex;
+			flex-direction: row;
+			margin-top: 25px;
+			margin-bottom: -25px;
+			justify-content: space-between;
+		}
+
+		#logo-icon {
+			width: 50px;
+			height: 50px;
+			opacity: 0;
+		}
+
+		#placetitle {
+			display: flex;
+			flex-direction: row;
+			margin-left: 50px;
+
+		}
+
+		#mtitle {
+			font-size: 37.5px;
+			margin-left: 15px;
+		}
+
+		#sgnin {
+			font-size: 22.5px;
+			margin-right: 40px;
+			font-weight: 300;
+			opacity: 0.9;
+			cursor: pointer;
+			transition: 0.5s all;
+		}
+
+		#signin:hover {
+			opacity: 1;
+		}
+
+		#p5_loading {
+			display: none;
+		}
+
+    
+    #tapstart {
+        font-family: TT Norms Medium !important;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        margin-top: 10%;
+        /* position: absolute; */
+        font-size: 28px;
+    }
+
+  
+    
+
+
+    .words {
+
+    }
+
+    .alerthr {
+      background-color: rgba(255,255,255,0.03);
+      opacity: 0;
+
+    }
+
+
+   #profilerow {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          margin-right: 20px;
+          /* box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.1); */
+          padding: 15px;
+          border-radius: 15px;
+          padding-left: 25px;
+          padding-right: 25px;
+          transition: 0.5s all;
+          margin-top: -19px;
+          cursor: pointer;
+        }
+
+        #profilerow:hover {
+          box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.1);
+        }
+
+        #profilepic {
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+          border: 2.5px solid #0c1221;
+        }
+
+        #uname {
+          font-size: 20px;
+          margin-left: 15px;
+          font-family: TT Norms Medium !important;
+          opacity: 0.8;
+        }
+
+        .sopt {
+            font-size: 18px;
+            font-family: TT Norms Medium !important;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: 0.5s all;
+        }
+
+        .sopt:hover {
+          opacity: 1;
+        }
+
+    
+
+        .menuhr {
+          background-color: rgba(255,255,255,0.2);
+        }
+
+        .drop-content {
+          background-color: #0c1221 !important;
+        }
+
+        #alertback {
+          width: 110%; 
+          height: 600px;
+          background-color:  rgb(19, 28, 47);
+          margin: -20px; 
+          padding: -20px;
+          border-radius: 2.5px;
+          position: absolute;
+          
+        }
+        
+
+        .modal-content {
+          background-color:  rgb(19, 28, 47);
+        }
+
+          .popupalert {
+      text-align: left;
+      margin-top: 12.5px;
+      margin-left: 10px;
+      font-size: 22px;
+      color: rgba(255,255,255,0.8) !important;
+      font-weight: 400;
+      /* font-family: TT Norms Bold !important; */
+
+    }
+
+        .toptitle {
+      font-size: 32.5px;
+      text-align: center;
+      color: white !important;
+      font-weight: 600;
+      box-shadow: 0px 10px 30px 0px rgb(0,0,0,0.145);
+      padding: 20px;
+      border-radius: 10px;
+
+    }
+
+        .rightimg {
+          width: 50px;
+          height: 50px;
+
+          /* box-shadow: 0px 10px 30px 0px rgb(0,0,0,0.11); */
+          /* padding: 20px; */
+          border-radius: 10px;
+
+
+
+        }
+
+        .inforow {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-evenly;
+          margin-top: 30px;
+          box-shadow: 0px 10px 30px 0px rgb(0,0,0,0.055); 
+          padding: 17.5px;
+          border-radius: 2.5px;
+
+        }
+
+        #startgame {
+          /* background-color: rgba(140, 77, 171, 0.2); */
+          outline: none;
+          margin: 0px auto;
+          border: none;
+          /* margin-top: 30px; */
+          margin-bottom: 25px;
+          padding-top: 30px;
+          padding-bottom: 10px;
+          padding-left: 20px;
+          padding-right: 20px;
+          background: transparent;
+          display: block;
+          /* font-family: TT Norms !important; */
+          cursor: pointer;
+          border-radius: 2.5px;
+          color: rgba(140, 77, 171, 1) !important;
+          width: 100%;
+          height: 60px;
+          font-size: 24.5px;
+          font-weight: 200;
+          /* box-shadow: 0px 10px 30px 0px rgb(0,0,0,0.11);  */
+          /* border: 25px red !important; */
+          display: none;
+        }
+
+        .modal-footer {
+          border-top: 1px solid rgba(255,255,255,0.05);
+          
+          /* margin-top: 0px; */
+
+        }
+
+        .bootbox-accept {
+          margin-top: 12px;
+          margin-bottom: 12px;
+          border: 1px solid rgba(140, 77, 171, 0.25);
+          padding-top: 11px;
+          padding-bottom: 11px;
+          padding-left: 21.5px;
+          padding-right: 21.5px;
+          /* background-color: rgb(19, 28, 47); */
+        }
+
+	</style>
+</head>
+
+<body>
+	<div>
+		<div class="custom-navbar">
+			<div id="placetitle">
+				<img id="logo-icon" src="https://i.redd.it/o6m7b0l6h6pz.gif"/>
+        <h1 id="mtitle">SynthSource</h2>
+        </div>
+         {% if user.is_authenticated %}
+        <div id="profilerow">
+        <img id="profilepic" src="/static/doctor.png"/>
+        <h3 id="uname">{{ user.username }}</h3>
+        </div>
+        {% else %}
+        <h1 class="wow fadeInUp"  id="sgnin">Sign In</h1>
+        {% endif %}
+      </div>
+
+
+     
+      
+  </body> 
+
+</html>
+
+<script
+   src="https://code.jquery.com/jquery-3.4.1.js"
+   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+   crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.js"></script>
+
+
+<script src="/static/bootbox.js"></script>
+
+ <script src="https://calm-hollows-60409.herokuapp.com/static/js/fontawesome-all.js"></script>
+
+<script src="/static/collision.js"></script>
+
+<script>
+
+  function startPrompt(){
+
+  bootbox.dialog({
+    message: `<h1 class="popupalert toptitle">👋 <span class="words">Welcome to SynthJump</span></h1>
+    <div class="inforow">
+    <h1 class="popupalert">You play as the bouncing ball</h1>
+    <img class="rightimg" src="https://i.redd.it/o6m7b0l6h6pz.gif"/>
+    </div>
+    <div class="inforow">
+    <h1 class="popupalert">Pink = in sync with the tune</h1>
+    <img class="rightimg" src="/static/tune.png"/>
+    </div>
+    <div class="inforow">
+    <h1 class="popupalert">Purple = in sync with the bass</h1>
+    <img class="rightimg" src="/static/bass.png"/>
+    </div>
+    <button id="startgame">Play Now →</button>
+    
+    `,
+    buttons: {
+     confirm: {
+            label: '<i class="fa fa-check"></i> Confirm'
+        }
+    },
+    backdrop: true,
+    callback: () => {
+      //Respond...
+    }
+  })
+
+  $('.bootbox-accept, .bootbox-close-button').click( (e) => {
+     if (gameOver){
+       window.location.href = "/game/";
+       return;
+     }
+
+
+      song.loop();
+      $('#tapstart').animate({opacity: 0, fontSize: 150});
+      
+      ingame = true;
+     
+  });
+
+  }
+
+   let x;
+   let y;
+   let song;
+   let fft; 
+   let ingame = false;
+   let landed = false;
+   let mainCharacter;
+   let peakDetect;
+   let peak2;
+   let waves;
+   let amplitude;
+   var gameOver;
+   var highScore = 0;
+   var gameLoaded = false;
+
+   var obstacles = [];
+
+    function Agent(x, y, player){
+     this.player = player;
+     this.x = x;
+     this.y = y;
+     this.bounceCount = 0;
+     this.position = createVector(this.x, this.y);
+     this.velocity = createVector(0, 1);
+     this.acceleration = createVector(0, 0.4);
+
+
+     this.drawPlayer = function() {
+       this.player.position(this.position.x, this.position.y);
+     }
+
+     this.update = function(){
+      if (!landed){
+        this.acceleration = createVector(0, 0.4 + 1.05 ** this.bounceCount);
+      }
+      this.velocity.add(this.acceleration);
+      this.position.add(this.velocity);
+      
+      if (this.position.y <= 100 && landed) {
+        this.position.y = 100;
+        this.velocity.y *= -0.3;
+      }
+
+      if (this.position.y >= window.innerHeight-200 && ( !landed || ingame)) {
+        this.velocity.y *= -0.7;
+        this.bounceCount += 1
+        if (this.velocity.y > -1){
+          landed = true;
+          this.velocity = createVector(0, 0);
+          this.acceleration = createVector(0, 0);
+        }
+      }
+     }
+
+  }
+
+   function Obstacle(x, y, width, height, color){
+     this.player = player;
+     this.x = x;
+     this.y = y;
+     this.width = width;
+     this.height = height;
+     this.position = createVector(this.x, this.y);
+     this.velocity = createVector(-1, 0);
+     this.acceleration = createVector(-0.5, 0);
+     this.color = color;
+ 
+
+
+     this.drawPlayer = function() {
+       fill(this.color);
+       rect(this.position.x, this.position.y, this.width, this.height);
+      //  ellipse(mainCharacter.position.x+25, mainCharacter.position.y+20, 50);
+       noFill();
+
+       //rx, ry, rw, rh, cx, cy, diameter 
+       var hit = collideRectCircle(this.position.x, this.position.y, this.width, this.height, mainCharacter.position.x+25, mainCharacter.position.y+20, 50);
+
+       if (hit && landed){
+         gameOver = true;
+         song.stop();
+
+        bootbox.dialog({
+          message: `<h1 class="popupalert toptitle"><span class="words">Game Over — you lost!</span></h1>
+          <div class="inforow">
+          <h1 class="popupalert">High Score: ${Math.floor(highScore/100)}</h1>
+          <img class="rightimg" src="/static/trophy.png"/>
+          </div>          
+          `,
+          buttons: {
+          confirm: {
+                  label: '<i class="fa fa-check"></i> Restart'
+              }
+          },
+          backdrop: true,
+          callback: () => {
+            //Respond...
+          }
+      });
+
+        $('.bootbox-accept, .bootbox-close-button').click( () => {
+        if (gameOver){
+          window.location.href = "/game/";
+          return;
+        }
+
+        song.loop();
+          $('#tapstart').animate({opacity: 0, fontSize: 150});
+        
+          ingame = true;
+        });
+
+       }
+     }
+
+     this.update = function(){
+      this.velocity.add(this.acceleration);
+      this.position.add(this.velocity);
+     }
+
+  }
+
+
+  $('#tapstart').css({marginTop: window.innerHeight/2 - 200});
+    $(window).resize(function(){
+     $('#tapstart').css({marginTop: window.innerHeight/2 - 200});
+    });
+
+  function preload(){
+    song = loadSound('/static/song.mp3');
+
+  }
+
+  
+
+  function setup(){
+    if (!navigator.userAgent.includes('Chrome')) {
+      frameRate(42);
+    }
+    gameLoaded = true;
+    startPrompt();
+
+    createCanvas(window.innerWidth, window.innerHeight);
+    $('.p5Canvas').css({marginTop: -50});
+
+    fft = new p5.FFT();
+
+    peakDetect = new p5.PeakDetect(20, 20000, 0.0, 2);
+
+
+       player = createImg('/static/spin.gif'); 
+      player.size(50, 50);
+
+      mainCharacter = new Agent(47.5, 25, player);
+
+    
+
+      amplitude = new p5.Amplitude(0.5);
+
+
+  }
+
+
+var prevTrebles = []
+
+var pastAverage = 1.00;
+  function draw(){
+      if (gameOver){
+        return;
+      }
+
+      highScore += 1;
+
+      // background('#d450c0');
+
+      clear();
+
+      mainCharacter.drawPlayer();
+      if (ingame){
+        mainCharacter.update();
+      }
+   
+      var waveform = fft.waveform();
+     
+      
+
+
+      noFill();
+      beginShape(); 
+
+      /* Optional */ 
+
+      fft.analyze();
+      peakDetect.update(fft);
+
+      
+      strokeWeight(1);
+
+      let blevel = fft.getEnergy('bass');
+      let tlevel = fft.getEnergy('lowMid');
+      prevTrebles.push(tlevel);
+      if (prevTrebles.length > 10) prevTrebles.shift(); 
+
+      let averageTreble = prevTrebles.reduce((a,b)=>a+b)/prevTrebles.length;
+      // console.log(prevTrebles);
+      // console.log(tlevel - averageTreble);
+
+      var halfHeight = (window.innerHeight - 160 - 100)/2
+      if (blevel > 180 && peakDetect.isDetected){
+          var obs1 = new Obstacle(window.innerWidth+10, random(100, window.innerHeight-60)/2+halfHeight, 40, 20, "#8c4dab"); 
+          obstacles.push(obs1);
+      } 
+      
+      if (peakDetect.isDetected){
+           var obs1 = new Obstacle(window.innerWidth+10, random(100, window.innerHeight-160)/2, 40, 20, "#d450c0"); 
+           obstacles.push(obs1);
+      }
+
+      // if (amplitude.getLevel() > 0.2){
+      //     var obs1 = new Obstacle(window.innerWidth+10, random(100, window.innerHeight-160), 40, 20);
+      //     obstacles.push(obs1);
+      // }
+
+      for (let obst of obstacles){
+        obst.update();
+        obst.drawPlayer();
+      }
+       stroke(`rgba(214, 0, 129, 0.4)`);
+      
+      
+      // console.log(waveform.join(","));
+
+
+      for (var i=0;i<waveform.length;i++){
+        let width = window.innerWidth;
+        let height = window.innerHeight; 
+
+        let x = map(i, 0, waveform.length, 0, width);
+       
+        let y = map(waveform[i], -1, 1, 0, height)-50
+
+        vertex(x,y);
+      }
+
+
+
+
+
+      endShape();
+
+      fill("rgb(14, 19, 33)");
+      noStroke();
+
+
+      rect(0, window.innerHeight-140, window.innerWidth, 50);
+
+  }
+
+
+    function keyPressed(){
+    if (ingame){
+      if (keyCode == 32 && landed){
+        mainCharacter.velocity = createVector(0, -8);
+        mainCharacter.acceleration = createVector(0, 0.55);
+      }
+      return false;
+    } else { 
+     if (keyCode == 32 && false){
+         song.loop();
+         $('#tapstart').animate({opacity: 0, fontSize: 150});
+     
+      ingame = true;
+      return false;
+     }
+    }
+  }
+
+</script>
+
+<script>
+    try {
+
+   document.getElementById('sgnin').addEventListener("click", function(e){
+      window.location.href ="/login/"
+  });
+
+  } catch(e) {
+
+    var drop = new Drop({
+      target: document.querySelector('#profilerow'),
+      classes: 'drop-theme-arrows-bounce-dark',
+      position: 'bottom right',
+      openOn: 'hover',
+      constrainToWindow: true,
+      constrainToScrollParent: false,
+      content: `<div id="screenrow">
+          <h1 id="create/" class="sopt">Creator Studio</h1>
+          <hr class="menuhr"/>
+          <h1 id="explore/" class="sopt">Song Search</h1>
+          <hr class="menuhr"/>
+          <h1 id="start/" class="sopt">Music Lessons</h1>
+           <hr class="menuhr"/>
+          <h1 id="logout/" class="sopt">Logout</h1>
+      
+      </div>`
+    });
+
+    $(document).on('click', '.sopt', (e) => {
+        window.location.href = `/`+e.target.id;
+    })
+
+  }
+
+ $('#placetitle').css({cursor: "pointer"});
+  $('#placetitle').click(() => {
+      window.location.href = "/";
+  });
+
+</script>

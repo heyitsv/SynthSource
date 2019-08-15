@@ -1,0 +1,374 @@
+<html>
+  <head>
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:100,200,300,400,500&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Encode+Sans:100,200,300,400,500&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css" rel="stylesheet">
+    <link href="https://cdn.materialdesignicons.com/3.7.95/css/materialdesignicons.min.css" rel="stylesheet">
+
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+
+  <link href="/static/drop-theme-arrows-bounce-dark.css" rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/tether-drop/1.4.2/css/drop-theme-arrows.css" rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/tether-drop/1.4.2/css/drop-theme-basic.css" rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/tether-drop/1.4.2/css/drop-theme-hubspot-popovers.css" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.4/js/tether.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether-drop/1.4.2/js/drop.js"></script>
+
+
+
+      <style>
+
+        @font-face{font-family:TT Norms;src:url(/static/TTNorms-Regular.woff2) format("woff2");font-display:block}@font-face{font-family:TT Norms Bold;src:url(/static/TTNorms-Bold.woff2) format("woff2");font-display:block}@font-face{font-family:TT Norms Medium;src:url(/static/TTNorms-Medium.woff2) format("woff2");font-display:block}
+
+
+          body {
+            background-color: rgb(19, 28, 47);
+          }
+
+          * {
+            font-family: "Nunito Sans", sans-serif !important;
+            color: white !important;
+          }
+
+               .custom-navbar {
+          display: flex;
+          flex-direction: row;
+          margin-top: 25px;
+          margin-bottom: -25px;
+          justify-content: space-between;
+        }
+
+        #logo-icon {
+          width: 50px;
+          height: 50px;
+        }
+
+        #placetitle {
+          display: flex;
+          flex-direction: row;
+          margin-left: 50px;
+          
+        }
+
+        #mtitle {
+          font-size: 37.5px;
+          margin-left: 15px;
+        }
+
+        #sgnin {
+            font-size: 22.5px;
+            margin-right: 40px;
+            font-weight: 300;
+            opacity: 0.9;
+            cursor: pointer;
+            transition: 0.5s all; 
+        }
+
+        #signin:hover {
+          opacity: 1;
+        }
+
+        #createnew {
+          width: 200px;
+          height: 100px;
+        }
+
+        .mainrow {
+          width: 90%;
+          margin: 0px auto;
+          margin-top: 45px;
+        }
+
+        .datawrap, .nwrap {
+          border: 3px solid rgb(40,40,40);
+          height: 200px; 
+          max-width: 370px;
+          min-width: 360px;
+          margin-top: 35px;
+          border-radius: 15px;
+          background-color: rgba(60,60,60, 0.15);
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+          margin-right: 60px;
+          cursor: pointer;
+          opacity: 0.9;
+          transition: 0.5s all;
+        }
+
+        .datawrap:hover {
+          opacity: 1;
+          transform: scale(1.01);
+        }
+
+        .nwrap:hover {
+          opacity: 0.6;
+          transform: scale(1.01);
+        }
+
+        .demostart {
+          width: calc(2904px/11);
+          height: calc(1252px/11);
+          /* border-radius: 5px; */
+          margin: 0px auto;
+          margin-top: 15px;
+        }
+
+        .addcircle {
+          width: 76px;
+          height: 76px;
+          margin: 0px auto;
+          margin-top: 30px;
+          
+        }
+
+        .trackname {
+          font-size: 23px;
+          font-weight: 200;
+          margin-top: 19.5px;
+          font-family: TT Norms !important;
+        }
+
+        .nstitle {
+          font-size: 23px;
+          font-weight: 200;
+          margin-top: 29px;
+          font-family: TT Norms !important;
+        }
+
+
+
+        .newsong {
+          opacity: 0.3;
+        }
+
+         #profilerow {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          margin-right: 20px;
+          /* box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.1); */
+          padding: 15px;
+          border-radius: 15px;
+          padding-left: 25px;
+          padding-right: 25px;
+          transition: 0.5s all;
+          margin-top: -19px;
+          cursor: pointer;
+        }
+
+        #profilerow:hover {
+          box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.1);
+        }
+
+        #profilepic {
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+          border: 2.5px solid #0c1221;
+        }
+
+        #uname {
+          font-size: 20px;
+          margin-left: 15px;
+          font-family: TT Norms Medium !important;
+          opacity: 0.8;
+        }
+
+        .sopt {
+            font-size: 18px;
+            font-family: TT Norms Medium !important;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: 0.5s all;
+        }
+
+        .sopt:hover {
+          opacity: 1;
+        }
+
+    
+
+        .menuhr {
+          background-color: rgba(255,255,255,0.2);
+        }
+
+        .drop-content {
+          background-color: #0c1221 !important;
+        }
+
+
+        #notification {
+          width: 92%;
+          /* background-color: rgba(60,60,60, 0.025); */
+          background-color: rgb(140, 77, 171);
+          margin: 0px auto;
+          height: 85.5px;
+          border-radius: 15px;
+          /* border: 2.5px solid rgba(140, 77, 171, 0.9); */
+          margin-top: 55px;
+          margin-bottom: -10px;
+          align-items: center;
+          display: flex;
+          flex-direction: row;
+          cursor: pointer;
+          opacity: 0.9;
+          color: rgba(255,255,255,0.9) !important;
+          /* border: 3px solid rgb(40,40,40); */
+          /* box-shadow: 0px 10px 30px 0px rgba(140, 77, 171, 0.5); */
+          /* display: none; */
+          box-shadow: 0px 10px 30px 0px rgba(0,0,0,0.05);
+          border: 5px solid rgba(40,40,40, 0.5);
+        }
+
+        #ptitle {
+           font-family: TT Norms Bold !important;
+           /* text-align: center; */
+           text-indent: 20px;
+           background-color: transparent;
+           width: 100%;
+           font-size: 35.5px;
+        }
+
+
+        .section-val, .section-val2 {
+          /* border: 3px solid rgb(40,40,40); */
+           border: 5px solid rgba(40,40,40, 0.5);
+          height: 220px; 
+          max-width: 430px;
+          min-width: 420px;
+          margin-top: 35px;
+          border-radius: 15px;
+          background-color: rgba(60,60,60, 0.15);
+          align-items: center;
+          display: flex;
+          margin-right: 80px;
+          margin-left: 80px;
+          cursor: pointer;
+          transition: 0.5s all;
+          opacity: 0.95;
+          display: inline-block;
+           box-shadow: 0px 10px 10px 0px rgba(140, 77, 171,0.025);
+          
+          /* box-shadow: 0 10px 30px 0 rgba(255,255,255,.0); */
+        }
+
+          .section-val:hover, .section-val2:hover {
+           transform: scale(1.02);
+           opacity: 1;
+        }
+
+
+       
+        .sections-display {
+          width: 100%;
+          text-align: center;
+          margin-top: 60px;
+        }
+
+        .stune {
+          width: calc(2872px/10.5);
+          height: calc(1402px/10.5);
+          border-radius: 5px;
+          position: absolute;
+          left: auto;
+          right: auto;
+          margin-left: -135.5px;
+          margin-top: 17.5px;
+          /* box-shadow: 0px 10px 30px 0px rgba(0,0,0,0.025); */
+          opacity: 0.85;
+          transition: 0.5s all;
+        }
+
+        .tsynth {
+          position: absolute;
+          font-size: 27.5px;
+          margin-top: 165px;
+          text-align: center;
+          font-family: TT Norms Bold !important;
+          margin-left: 67.5px;
+          color: rgba(255,255,255,0.9) !important;
+          width: calc(2872px/10.5);
+          transition: 0.5s all;
+        }
+
+        .section-val:hover .stune {
+          /* opacity: 1; */
+        }
+
+        .section-val:hover .tsynth {
+          opacity: 1;
+        }
+
+        #mtopmain {
+          margin-top: 75px;
+          margin-bottom: -20px;
+          background-color: rgba(255,255,255,0.075);
+          /* background-color: rgb(140, 77, 171); */
+
+
+        }
+
+         #notif {
+          width: 38.5px;
+          height: 38.5px;
+          margin-left: 27.5px;
+          margin-top: -4px;
+
+        }
+
+</style>
+  </head>
+<body>
+  <div id="notification">
+    <img id="notif" src="/static/exclamation.png"/>
+    <h1 id="ptitle">SynthJam Game Portal</h1>
+  </div>
+
+  <hr id="mtopmain"/>
+
+  <div class="sections-display">
+  <div class="section-val">
+      <img class="stune" src="/static/sjam.png"/>
+      <h1 class="tsynth">SynthJam</h1>
+  </div>
+  
+  <div class="section-val2">
+      <img class="stune" src="/static/stune.png"/>
+      <h1 class="tsynth">TuneSynth</h1>
+  </div>
+
+  </div>
+
+  
+
+</body>
+</html>
+
+<script>
+
+    $('.section-val').click( () => {
+        window.location.href = '/game/';
+    });
+
+
+    $('.section-val2').click( () => {
+        window.location.href = '/tunesynth/';
+    });
+
+
+      
+
+
+
+</script>

@@ -1,0 +1,188 @@
+<!-- 806 x 184 -->
+
+<html>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+  	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:100,200,300,400,500&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Encode+Sans:100,200,300,400,500&display=swap" rel="stylesheet">
+
+    
+
+  <head>
+    <style>
+        @font-face{font-family:TT Norms;src:url(/static/TTNorms-Regular.woff2) format("woff2");font-display:block}@font-face{font-family:TT Norms Bold;src:url(/static/TTNorms-Bold.woff2) format("woff2");font-display:block}@font-face{font-family:TT Norms Medium;src:url(/static/TTNorms-Medium.woff2) format("woff2");font-display:block}
+
+
+        body {
+          background-color: #080c17;
+          cursor: pointer;
+        }
+
+        #bandimg {
+            width: calc(960px/2.5); 
+            height: calc(699px/2.5);
+            display: block;
+            margin: 0px auto;
+            /* margin-top: -60px; */
+            opacity: 1;
+            border-radius: 25px;
+            box-shadow: 0px 10px 30px 0px rgba(0,0,0,1);
+            margin-top: -20px;
+            width: 100%;
+            height: 100%;
+            opacity: 0.015;
+            z-index: -1;
+        }
+
+        #player {
+          width: 0px;
+          height: 0px;
+        }
+
+        #coverimg {
+          width: 220px;
+          height: 220px;
+          margin-top: -311.5px;
+          opacity: 1;
+          position: absolute;
+          z-index: 100;
+          margin-left: 50px;
+          border-radius: 10px;
+          box-shadow: 0px 10px 30px 0px rgba(255,255,255,0.11);
+        }
+
+        .fltext {
+            text-align: right;
+        }
+
+        #lowpts {
+          margin-top: -300px;
+          margin-right: 80px;
+          color: white;
+        }
+
+        .bandname {
+           font-family: TT Norms Bold, sans-serif;
+           font-size: 35px;
+            text-shadow: 0px 0px 10px rgba(255,255,255,0.25);
+        }
+
+        .songname {
+          font-family: TT Norms Medium, sans-serif;
+          font-size: 40px;
+           text-shadow: 0px 0px 10px rgba(255,255,255,0.25);
+        }
+
+        #direction {
+          position: absolute;
+          font-size: 15px;
+          font-weight: 200;
+          font-family: sans-serif;
+          bottom: 50px;
+          color: rgb(205, 205, 205);
+          text-shadow: 0px 0px 10px rgba(255,255,255,0.45);
+          left: 60.5px;
+        }
+        
+    </style>
+  </head>
+
+  <body>
+    <img
+    id="bandimg" src="https://images.genius.com/38a2b5da3d6202e9e020fd9c7b0642db.960x699x1.jpg"/>
+
+    <img id="coverimg" src="https://images.genius.com/9d85a2b6274e948ac50dbb5a12231686.1000x1000x1.jpg"/> 
+  
+    <h1 id="direction">(Paused - click anywhere to play)</h1>
+
+    <div id="lowpts">
+    <h1 id="sname" class="fltext songname">Good For You</h1>
+    <h1 id="bname" class="fltext bandname">Toto</h1>
+    </div>
+
+    <div id="player"></div>
+
+
+  </body>
+  <script>
+
+
+
+    window.addEventListener('message', (msg) => {
+      if (!msg.origin.includes('youtube')){ 
+        console.log(msg.origin);
+        console.log(msg);
+        console.log('--------')
+      }
+
+     if (msg.origin == "https://synthsource--samdevz.repl.co" || msg.origin == "https://www.synthsourceapp.com" || msg.origin == "http://www.synthsourceapp.com"){
+
+
+
+   let {data} = msg;
+
+    $('#bandimg').attr('src', data.bandCover);
+    $('#coverimg').attr('src', data.albumCover);
+
+    $('#sname').text(data.songName.substring(0,18));
+    $('#bname').text(data.bandName);
+
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+
+    document.title = `${data.songName} - ${data.bandName}`;
+
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    window.onYouTubeIframeAPIReady = function(){
+      player = new YT.Player('player', {
+        height: '0',
+        width: '0',
+        videoId: data.vid,
+        events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+        }
+      })
+    }
+
+
+    function onPlayerStateChange(event) {
+    window.state = event.data;
+    console.log(window.state);
+      if (window.state === 1) {
+        $('#direction').html('(Playing - click anywhere to stop)')
+      } else if (window.state === 2) {
+        $('#direction').html('(Paused - click anywhere to play)')
+      }
+  }
+
+    window.onPlayerReady = function(event){
+      event.target.playVideo();
+      window.tg = event.target;
+      console.log(event.target);
+    }
+
+
+     }
+
+    });
+
+    
+
+    $(document).on('click', () => {
+      if (window.state === 1) {
+        window.tg.pauseVideo();
+      } else if (window.state === 2) {
+        window.tg.playVideo();
+      }
+    });
+
+
+
+  </script>
+
+</html>

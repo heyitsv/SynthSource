@@ -1,0 +1,1049 @@
+<html>
+  <head>
+    
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:100,200,300,400,500&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Encode+Sans:100,200,300,400,500&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css" rel="stylesheet">
+    <link href="https://cdn.materialdesignicons.com/3.7.95/css/materialdesignicons.min.css" rel="stylesheet">
+
+
+  <script src="https://calm-hollows-60409.herokuapp.com/static/js/fontawesome-all.js"></script>
+
+    <link rel="stylesheet" href="/static/test.css">
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+      <style>
+
+        @font-face{font-family:TT Norms;src:url(/static/TTNorms-Regular.woff2) format("woff2");font-display:block}@font-face{font-family:TT Norms Bold;src:url(/static/TTNorms-Bold.woff2) format("woff2");font-display:block}@font-face{font-family:TT Norms Medium;src:url(/static/TTNorms-Medium.woff2) format("woff2");font-display:block}
+
+
+          body {
+            background-color: rgb(19, 28, 47);
+          }
+
+          body {
+            font-family: "Nunito Sans", sans-serif !important;
+            color: white;
+          }
+
+               .custom-navbar {
+          display: flex;
+          flex-direction: row;
+          margin-top: 25px;
+          margin-bottom: -25px;
+          justify-content: space-between;
+        }
+
+        #logo-icon {
+          width: 50px;
+          height: 50px;
+        }
+
+        #placetitle {
+          display: flex;
+          flex-direction: row;
+          margin-left: 50px;
+          
+        }
+
+        #mtitle {
+          font-size: 37.5px;
+          margin-left: 15px;
+        }
+
+        #sgnin {
+            font-size: 22.5px;
+            margin-right: 40px;
+            font-weight: 300;
+            opacity: 0.9;
+            cursor: pointer;
+            transition: 0.5s all; 
+        }
+
+        #signin:hover {
+          opacity: 1;
+        }
+
+        .recline {
+          background-color: rgba(50,50,50, 0.55);
+        }
+
+        #recimg {
+          width: 62.5px;
+          height: 62.5px;
+          margin: 10px auto;
+          display: block;
+          opacity: 0.8; /*0.7 for square*/
+          cursor: pointer !important;
+          /* transition: 0.5s all; */
+        }
+
+        #recimg:hover {
+          opacity: 1;
+        }
+
+        #recordcenter {
+          margin-top: 140px;
+
+        }
+
+          b { font-weight: bold; }
+
+	.key { position: absolute; font-family: Helvetica; font-weight: 100; font-size: 12px;
+		border: 1px solid rgba(32,32,32,0.2);
+		border-radius: 0px 0px 5px 5px;
+		cursor:pointer;
+		box-shadow: 0px 5px 1px rgba(32,32,32,0.2);
+		-webkit-transition: margin 0.05s ease, background-color 0.05s ease, box-shadow 0.05s ease; 
+    transition: 0.5s all;
+    }
+	.key:hover { opacity: 0.9; }
+		
+	.key .label { position: absolute; bottom: 5px; text-align: center; left: 0px; right: 0px; }
+
+	.black { background-color: rgb(32,32,32); color: #ffffff; z-index: 1; text-shadow: 0px -1px 1px rgba(255,255,255,0.5); }
+	
+	.white { background-color: rgba(255,255,255,1); color: rgb(32,32,32); z-index: 0; text-shadow: 0px 1px 1px rgba(32,32,32,0.5); }
+
+.keyboard-options { margin: 30px auto; width: auto; text-align: center; font-size: 12px; font-weight: 200; padding:10px; }
+
+	.keyboard-holder { margin: 30px auto; height: 200px; position:relative; user-select:none; -webkit-user-select:none;-moz-user-select:none;-o-user-select:none; margin-top: 85px;}
+
+  #keyboard {
+    padding-left: 40px;
+    margin: 0px auto;
+    margin-top: 30px;
+    /* opacity: 0.9; */
+  }
+
+  #musicback {
+    background-color: rgba(0,0,0,0.2);
+    width: 87.5%;
+    height: 675px;
+    border: 5px solid  rgba(0,0,0,0.25);
+    border-radius: 15px;
+    margin: 0px auto;
+    margin-top: 95px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .flrow {
+    width: 100%;
+    height: 100px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  #bottomrow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 200px;
+    margin-bottom: -120px;
+    z-index: 10000;
+
+
+  }
+
+  #musicplayer {
+    width: 65px;
+    height: 65px;   
+    margin: 0px auto;
+    cursor: pointer;
+
+  }
+
+    #pauseplayer {
+    width: 65px;
+    height: 65px;   
+    margin: 0px auto;
+    cursor: pointer;
+    display: none;
+    opacity: 0;
+
+  }
+
+  .speedbtn {
+    width: 52.5px;
+    height: 52.5px;
+    opacity: 0.6;
+    position: relative;
+    z-index: 1000000;
+
+  }
+
+  #backbtn {
+    transform: rotate(-180deg);
+    margin: 0px auto;
+    left: -110px;
+    top: 4px;
+    cursor: pointer;
+    z-index: 1000000;
+  }
+
+
+  #ffbtn {
+    margin: 0px auto;
+    left: 105px;
+    top: -47.5px;
+    cursor: pointer;
+  } 
+
+  .emptymusic:hover {
+    background-color: rgba(255,255,255,0.01);
+
+  }
+
+
+
+  .optionswrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+  }
+
+  .search, .studio {
+    display: none;
+  }
+
+  .emptymusic .search {
+    font-weight: 200;
+    margin-right: -20px;
+    font-size: 30px;
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+    transition: 0.5s opacity;
+    cursor: pointer;
+    display: inline-block;
+    opacity: 0; // 0.7
+  }
+
+  .emptymusic .studio {
+    font-weight: 200;
+    margin-left: -20px;
+    font-size: 30px;
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+    transition: 0.5s opacity;
+    cursor: pointer;
+    display: inline-block;
+    opacity: 0; // 0.7
+  }
+
+  .emptymusic:hover .search {
+    opacity: 0.7;
+  }
+
+   .emptymusic:hover .studio {
+    opacity: 0.7;
+  }
+
+  .emptymusic:hover .search:hover {
+    opacity: 1;
+    box-shadow: 0px 10px 30px 0px rgba(11, 77, 112, 0.05);
+  }
+
+   .emptymusic:hover .studio:hover {
+    opacity: 1;
+    box-shadow: 0px 10px 30px 0px rgba(11, 77, 112, 0.05);
+  }
+
+  .musicblock {
+    display: none;
+  }
+
+  .fullmusic .musicblock {
+    width: 0px;
+    /* min-width: 150px; */
+    height: 95%;
+    margin-right: auto;
+    background-color: #f59042;
+    background-color: rgba(245, 144, 66, 0.95);
+    background-color: #db53a5;
+    border-radius: 20px;
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.5s width;
+  }
+
+
+  .smallblock:hover {
+    width: 150px !important;
+  }
+
+  .musicblock:hover .tname {
+    opacity: 0.75;
+  }
+
+  .musicblock:hover .tlength {
+    opacity: 0.5;
+  }
+
+
+
+
+  .tname {
+    font-size: 19.5px;
+    margin-left: 10px;
+    margin-top: 50px;
+    font-weight: 200;
+    /* font-family: TT Norms !important; */
+    opacity: 0;
+    transition: 0.225s opacity;
+  }
+
+  .tlength {
+    font-size: 14.5px;
+    margin-left: 7.5px;
+    margin-top: 54px;
+    font-weight: 300;
+    /* font-family: TT Norms !important; */
+    opacity: 0;
+    transition: 0.225s opacity;
+
+  }
+
+  .lowtext {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 2px;
+
+  }
+
+  #timekeeper {
+    position: absolute;
+    left: 6.3%;
+    right: 0;
+    border-radius: 5px;
+    width: 6.5px;
+    z-index: 100;
+    height: 59%;
+    background-color: rgba(255,255,255,0.2);
+    cursor: pointer;
+  }
+
+  .emptymusic .removesong {
+    display: none;
+  }
+
+
+  .removesong {
+    width: 60.5px;
+    height: 60.5px;
+    /* margin-top: 19.45px; */
+    position: relative;
+    margin-right: 37.5px;
+    position: absolute;
+    right: 6.25%;
+    opacity: 0; 
+    transition: 0.5s opacity;
+  }
+
+  .removesong:hover {
+      opacity: 0.5;
+      cursor: pointer;
+  }
+
+
+  .bootbox-body {
+    color: #333 !important;
+  }
+ 
+
+        </style>
+    </head>
+    <body>
+       <div class="custom-navbar">
+          <div id="placetitle">
+        <img id="logo-icon" src="https://i.redd.it/o6m7b0l6h6pz.gif"/>
+        <h1 id="mtitle">SynthSource</h2>
+        </div>
+        <h1 id="sgnin">Settings »</h1>
+      </div>
+
+      <div  style="display: none;" class="row">
+      <div  class="col col-sm-8" id="instruments-container-1">     
+
+          <div class="keyboard-options">
+        <select style="display: none;" ID="sound">
+          <option value="0">Keyboard</option>
+          <option value="1">Organ</option>
+            <option value="2" selected>Acoustic Guitar</option>
+            <option value="3">Electronic</option>
+        </select>
+        <div ID="keyboard" class="keyboard-holder"></div>
+        <div class="keyboard-options" style="display: none;">
+        Range [C<span ID="OCTAVE_LOWER">3</span>-B<span ID="OCTAVE_UPPER">5</span>]
+        <input type="button" ID="-_OCTAVE" value="-" />
+        <input type="button" ID="+_OCTAVE" value="+" /><br />
+        <i>(Use left/right arrows to adjust with keyboard)</i>
+        </div>
+        </div>
+
+    </div>
+      
+
+    </div>
+
+    
+
+      <div id="musicback">
+          <div id="timekeeper"></div>
+          <div class="flrow emptymusic">
+              <div id="m1" class="optionswrap">
+                    <div class="musicblock">
+                        <hr style="margin-bottom: -45px; margin-top: 52.5px; background-color: rgba(255,255,255,0.3);"/>
+                        <div class="lowtext">
+                        <h3 class="tname">Track 1 - </h3>
+                        <h3 class="tlength">0:42</h3>
+                        </div>
+                    </div>
+                    <h2 class="m1 search">TuneSync™</h2>
+                    <h2 class="m1 studio">Studio</h2>
+                     <img class="removesong" src="/static/cancel.png"/>
+
+              </div>
+             
+          </div>
+           <div class="flrow emptymusic">
+              <div id="m2" class="optionswrap">
+                    <div class="musicblock">
+                        <hr style="margin-bottom: -45px; margin-top: 52.5px; background-color: rgba(255,255,255,0.3);"/>
+                        <div class="lowtext">
+                        <h3 class="tname">Track 1 - </h3>
+                        <h3 class="tlength">0:42</h3>
+                        </div>
+                    </div>
+                    <h2 class="m2 search">TuneSync™</h2>
+                    <h2 class="m2 studio">Studio</h2>
+                     <img class="removesong" src="/static/cancel.png"/>
+              </div>
+              
+
+          </div>
+             <div class="flrow emptymusic">
+              <div id="m3" class="optionswrap">
+                    <div class="musicblock">
+                        <hr style="margin-bottom: -45px; margin-top: 52.5px; background-color: rgba(255,255,255,0.3);"/>
+                        <div class="lowtext">
+                        <h3 class="tname">Track 1 - </h3>
+                        <h3 class="tlength">0:42</h3>
+                        </div>
+                    </div>
+                    <h2 class="m3 search">TuneSync™</h2>
+                    <h2 class="m3 studio">Studio</h2>
+                     <img class="removesong" src="/static/cancel.png"/>
+              </div>
+
+          </div>
+             <div class="flrow emptymusic">
+              <div id="m4" class="optionswrap">
+                    <div class="musicblock">
+                        <hr style="margin-bottom: -45px; margin-top: 52.5px; background-color: rgba(255,255,255,0.3);"/>
+                        <div class="lowtext">
+                        <h3 class="tname">Track 1 - </h3>
+                        <h3 class="tlength">0:42</h3>
+                        </div>
+                    </div>
+                    <h2 class="m4 search">TuneSync™</h2>
+                    <h2 class="m4 studio">Studio</h2>
+                     <img class="removesong" src="/static/cancel.png"/>
+              </div>
+
+          </div>
+             <div class="flrow emptymusic">
+              <div id="m5" class="optionswrap">
+                    <div class="musicblock">
+                        <hr style="margin-bottom: -45px; margin-top: 52.5px; background-color: rgba(255,255,255,0.3);"/>
+                        <div class="lowtext">
+                        <h3 class="tname">Track 1 - </h3>
+                        <h3 class="tlength">0:42</h3>
+                        </div>
+                    </div>
+                    <h2 class="m5 search">TuneSync™</h2>
+                    <h2 class="m5 studio">Studio</h2>
+                     <img class="removesong" src="/static/cancel.png"/>
+              </div>
+
+          </div>
+          <div id="bottomrow">
+              <img id="musicplayer"  src="/static/mplayer.png"/>
+              <img id="pauseplayer" src="/static/pause.png"/>
+          </div>
+           <img class="speedbtn" id="backbtn" src="/static/ff.png"/>
+           <img class="speedbtn" id="ffbtn" src="/static/ff.png"/>
+      </div>
+
+
+     
+
+
+    </body> 
+</html> 
+<script src="/static/audiosynth.js"></script>
+<script src="/static/pianoview.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.core.min.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script> -->
+
+<script src="https://unpkg.com/draggabilly@2/dist/draggabilly.pkgd.min.js"></script>
+
+
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<script src="/static/bootbox.js"></script>
+
+<script type="text/javascript">
+
+ 
+ /* var musicblock = interact('.musicblock');
+
+  musicblock.draggable({
+      origin: 'self',
+      intertia: true,
+      modifiers: [
+          interact.modifiers.restrict({
+              restriction: 'self'
+          })
+
+      ]
+
+  }).on('dragmove', function(e){
+      let event = e;
+      var target = event.target;  
+
+      let pastMarginLeft =  ( parseFloat(target.style.marginLeft) || 0 )
+      target.style.marginLeft = pastMarginLeft + event.dx;
+
+
+
+  });*/
+  
+
+  window.localStorage.removeItem('globalRec');
+  window.localStorage.setItem('globalRec', `{{ song.data | safe }}` )
+
+  {% if song.isOwner %}
+    var isOwner = true;
+  {% else %}
+    var isOwner = false;
+  {% endif %} 
+
+  function handleNotOwner(){
+    {% if is_authenticated %}
+      bootbox.confirm({
+        title: "No permissions!",
+        message: "You don't own this song! Do you want to fork it so you can make changes?",
+        buttons: {
+            cancel: {
+                label: '<i class="fa fa-times"></i> Cancel'
+            },
+            confirm: {
+                label: '<i class="fa fa-check"></i> Confirm'
+            }
+        },
+        callback: function (result) {
+            if (result){
+              $.ajax({
+                url: "/copysong/",
+                type: "POST",
+                data: {
+                  songid: new URL(document.location).searchParams.get('q'),
+                },
+                success: function(response){
+                  window.location.href = response.url;
+                }
+              })
+            }
+        }
+    });
+
+    {% else %}
+
+    window.location.href = "/login/";
+
+    {% endif %}
+  }
+
+
+  if (isOwner){ 
+  var $draggable = $('.musicblock').draggabilly({
+        axis: 'x',
+        // containment: true,
+  });
+
+  var $draggableTick = $('#timekeeper').draggabilly({
+      axis: 'x',
+  });
+
+  var $draggie = $('.musicblock').data('draggabilly')
+
+  var todo; 
+
+  $draggable.on('dragEnd', function(event, pointer){ 
+    todo();
+  });
+
+
+  $draggable.on('dragMove', function(event, pointer){
+
+
+
+    let itemID;
+
+    let focusE = event.target; 
+    itemID = focusE.id; 
+    while (!itemID.includes('m')){
+        focusE = $(focusE).parent();
+        itemID = focusE[0].id; 
+    }
+
+    console.log(focusE);
+    window.fe = focusE; 
+
+
+
+
+  // let mainWidth = focusE[0].children[0].getBoundingClientRect().width;
+  // let mainShift = mainWidth/406 * 77.75;
+  // console.log(mainShift);
+  // let org = focusE[0].children[0].getBoundingClientRect().left + mainShift;
+  // let widthVal = focusE[0].children[0].getBoundingClientRect().right - org;
+  let leftSet = parseFloat(focusE[0].children[0].style.left.replace('px',''));
+  let pl = $(focusE[0]).parent()[0].style.paddingLeft;
+  if (pl){
+    leftSet +=  parseFloat(pl.replace('px',''));
+  }
+  let translateVal = parseFloat(focusE[0].children[0].style.transform.match(/3d\(([^p]+)/)[1]);
+  // console.log(leftSet);
+  let org = leftSet + translateVal;
+  
+
+
+  // console.log(org);
+  let xOffset = org;
+
+
+
+  itemID = parseInt(itemID[1]);
+
+
+    let tunesIndex = parseInt(itemID)-1;
+    // savedTunes[tunesIndex].left = xOffset;
+
+    let allOld = JSON.parse(window.localStorage.globalRec); 
+    let newRecs = [];
+
+    var icount = 0;
+    for (let obj of allOld){
+      if (obj.target == `m${itemID}`) {
+          obj.left = xOffset;
+          savedTunes[itemID-1].left = xOffset;
+          obj.cWidth = window.innerWidth;
+          newRecs.push(obj);
+      } else {
+        newRecs.push(obj);
+      }
+      icount += 1;
+    }
+
+  window.localStorage.setItem('globalRec', JSON.stringify(newRecs));
+  todo = () => {}
+  if (isOwner){
+    todo = () => {$.ajax({
+      url: '/updatesong/',
+      type: "POST",
+      data: {
+        "songid": "{{ song.id | safe}}",
+        "name": "{{ song.name }}",
+        "data": JSON.stringify(newRecs),
+
+      }
+    });
+    }
+  } else {
+    handleNotOwner();
+  }
+
+
+  })
+
+  } else {
+    $('.musicblock').click( () => {
+        handleNotOwner();
+    }); 
+
+    $('#timekeeper').click( () => {
+        handleNotOwner();
+    }); 
+
+  }
+
+  window.isRecording = false; 
+  window.isPlaying = false;
+  window.soundval = 2;
+  window.canPlay = true;
+  window.noKeyboard = true;
+
+  var a = new AudioSynthView();
+  a.draw();
+
+
+
+var drums = new Howl({
+  src: ['/static/drums.mp3']
+});
+
+var cymbals = new Howl({
+  src: ['/static/cymbal.mp3']
+});
+
+  function playDrums(){
+    drums.play();
+  }
+
+  function playCymbals(){
+    cymbals.play();
+  }
+
+  var currentIntervals = [];
+
+  function playMusic(latestRec, error){
+    document.getElementById('sound').value = latestRec.soundval;
+
+    for (let event of latestRec.events){
+      if (event[0] - error >= -50) {
+      var itv = setTimeout(function(){
+        if (!event[2]) {
+          event[2] = true;
+        let trigger = event[1];
+        if (trigger == "playDrums"){
+          playDrums(); 
+        } else if (trigger == "playCymbals"){
+          playCymbals();
+        } else {
+          let vals = trigger.split("|")
+          let keyCode = parseInt(vals[0]);
+          let keyVal = vals[1];
+
+          if (keyVal == "keydown"){
+              window.fnPlayKeyboard({keyCode: keyCode});
+          } else { //keyup 
+              window.fnRemoveKeyBinding({keyCode: keyCode});
+          }
+
+
+
+
+        } 
+        }
+      }, Math.max(event[0]-error, 0));
+      setTimeout( () => {
+        event[2] = false;
+      }, 50);
+      currentIntervals.push(itv);
+      }
+    }
+
+
+    setTimeout(function(){
+      
+    }, latestRec.events.sort((a,b)=>b[0]-a[0])[0][0] );
+  }
+
+
+  $('.studio, .search').click(function(e){
+    if (isOwner){ 
+      window.location.href = "/studio?target=" + e.target.className.split(" ")[0] + "&q={{ song.id }}"
+    } else {
+      handleNotOwner();
+    }
+
+  });
+
+
+
+  var savedTunes = [false, false, false, false, false];
+
+  function setupSavedTunes(){
+
+  if (window.localStorage.globalRec){
+      let tobj = JSON.parse(window.localStorage.globalRec); 
+        for (let mker of tobj){
+          let target = mker.target;
+          let recVals = mker.reclogs;
+          let leftOffset = mker.left; 
+          let cWidth = mker.cWidth;
+
+          let saveIndex = parseInt(target[1]);
+          savedTunes[saveIndex-1] = {recVals: recVals, left: leftOffset, cWidth: cWidth};
+      }
+  }
+
+  for (var i=0;i<savedTunes.length;i++){
+    let value = savedTunes[i];
+    if (value) { 
+      let allEvents = value.recVals.events; 
+
+      let tstart = Math.min(...allEvents.map(x=>x[0]));
+      let tend = Math.max(...allEvents.map(x=>x[0]));
+
+  
+      let timeSeconds = Math.round((tend-tstart)/1000);
+      let realSeconds = (tend-tstart)/1000;
+      let mainSelector = `m${i+1}`;
+      let wrapper = $(`.${mainSelector}`).parent().parent();
+      wrapper.toggleClass("emptymusic");
+      wrapper.toggleClass("fullmusic");
+
+      let lval = 0;
+      if (value.left){
+        lval = (window.innerWidth/value.cWidth)*value.left
+      }
+
+
+      console.log(wrapper);
+      $(wrapper).animate({ paddingLeft: `${lval}px`});
+      console.log(wrapper[0].getBoundingClientRect().left)
+      $(wrapper).find(".tname").text(`Track ${i+1} -`);
+      $(wrapper).find(".tlength").text(`0:${timeSeconds < 10 ? "0" : ""}${timeSeconds}`);
+      var totalWidth = 0.875*window.innerWidth; 
+      let idealWidth = realSeconds/40*totalWidth; 
+
+
+      if (idealWidth > 150) {
+        $(wrapper).find('.tname').css({opacity: 1});
+        $(wrapper).find('.tlength').css({opacity: 1});
+        
+      } else {
+        $(wrapper).find('.musicblock').addClass('smallblock');
+      }
+      $(wrapper).find('.musicblock').css({width: idealWidth});
+  
+      savedTunes[i].idealWidth =  $(wrapper).find('.musicblock')[0].getBoundingClientRect().width;
+    }
+  }
+  }
+
+  setupSavedTunes();
+
+  let inProgress = false;
+
+  $('#pauseplayer').click( () => {    
+        inProgress.paused = true;
+         $('#pauseplayer').animate({opacity: 0}, {
+        complete: function(){
+            $('#pauseplayer').css({display: "none"});
+            $('#musicplayer').css({display: "inline-block"});
+            $('#musicplayer').animate({opacity: 1});
+        }
+
+        
+      })
+      $('#timekeeper').stop();
+      currentIntervals.map(clearInterval);
+
+      for (var i=0;i<savedTunes.length;i++){
+        let value = savedTunes[i];
+        if (!value) continue;
+        value.done = false;
+      }
+
+
+  });
+
+  $('#musicplayer').click(() => {
+
+      if (!inProgress) {
+        inProgress = {
+            timeElapsed: 0,
+            paused: false,
+            ended: false,
+        }
+      }
+
+      inProgress.paused = false;
+
+
+      $('#musicplayer').animate({opacity: 0}, {
+        complete: function(){
+            $('#musicplayer').css({display: "none"});
+            $('#pauseplayer').css({display: "inline-block"});
+            $('#pauseplayer').animate({opacity: 0.825});
+        }
+
+        
+      });
+
+         
+      let totalDistPx = ((window.innerWidth - window.innerWidth * 0.063)-window.innerWidth * 0.063);
+
+      let tkval = document.getElementById('timekeeper').style.left;
+
+      if (tkval.includes('%')){ 
+        inProgress.timeElapsed = 40000 * ((parseFloat(tkval.replace('%',''))-6.3)/(93.55-6.3));
+
+      } else {
+        inProgress.timeElapsed = 40000 * ((parseFloat(document.getElementById('timekeeper').style.left.replace('px','') || window.innerWidth * 0.063) - window.innerWidth * 0.063)/totalDistPx); 
+      }
+
+
+      console.log(inProgress.timeElapsed);
+
+      var timeElGlobal = inProgress.timeElapsed
+
+      $('#timekeeper').animate({left: "93.55%"}, {
+        duration: 40000 - inProgress.timeElapsed,
+        easing: 'linear',
+        step: function(now, fx){
+              console.log(fx.start);
+              let distance = fx.end - fx.start; 
+              let seconds = (now-fx.start)/distance * 40;
+              seconds *= 1000;
+              seconds += timeElGlobal;
+              // console.log(seconds);
+
+              inProgress.timeElapsed = seconds; 
+
+              for (var i=0;i<savedTunes.length;i++){
+                let value = savedTunes[i];
+                if (!value) continue;
+                let total = document.getElementsByClassName('flrow')[0].getBoundingClientRect().width - value.idealWidth; //the range of the leftmost portion of the block
+                  let lval = 0;
+                  if (value.left){ //below: set up a proportion
+                    lval = (window.innerWidth/value.cWidth)*value.left
+                  }
+
+                let leftOffset = lval / total * 40 * 1000;
+                // console.log(seconds > leftOffset);
+                if (value && seconds > leftOffset){
+                    let error = seconds - leftOffset
+                    playMusic(value.recVals, error);
+                }
+              }
+
+        },
+        complete: function(){
+          inProgress.ended = true;
+        }
+
+      });
+      
+  });
+
+  $('#backbtn').click( () => {
+      $('#timekeeper').stop();
+             $('#pauseplayer').animate({opacity: 0}, {
+        complete: function(){
+            $('#pauseplayer').css({display: "none"});
+            $('#musicplayer').css({display: "inline-block"});
+            $('#musicplayer').animate({opacity: 1});
+        }
+
+        
+      })
+      currentIntervals.map(clearInterval);
+        inProgress = false;
+       $('#timekeeper').css({left: '6.3%'});
+       for (var i=0;i<savedTunes.length;i++){
+          let value = savedTunes[i];
+          if (!value) continue;
+          console.log(value);
+          value.done = false;
+          console.log(value.recVals)
+          for (let event of value.recVals.events){
+            event[2] = false;
+          }
+       }
+  });
+
+  $('#ffbtn').click( () => {
+      $('#timekeeper').stop();
+      inProgress = false;
+      $('#timekeeper').css({left: '93.55%'});
+
+  });
+
+  $('.removesong').click((e) => {
+      if (!isOwner){
+        handleNotOwner();
+        return;
+      }
+      $(e.target).parent().parent().toggleClass('fullmusic'); 
+      $(e.target).parent().parent().toggleClass('emptymusic'); 
+      $(e.target).parent().parent().animate({paddingLeft: 0});
+
+      let tParent = $(e.target).parent()[0];
+
+      let oldData = JSON.parse(window.localStorage.globalRec); 
+      let newData = [];
+      for (let dp of oldData){
+        if (dp.target != tParent.id){
+          newData.push(dp);
+        }
+      }
+
+      window.localStorage.removeItem('globalRec');
+      window.localStorage.setItem('globalRec', JSON.stringify(newData));
+
+      if (isOwner){ 
+        $.ajax({
+          url: '/updatesong/',
+          type: "POST",
+          data: {
+            "songid": "{{ song.id | safe}}",
+            "name": "{{ song.name }}",
+            "data": JSON.stringify(newData),
+
+          }
+        });
+      } 
+
+
+  })
+  var setName; 
+  $('#sgnin').click( () => {
+    if (!isOwner){
+      handleNotOwner();
+      return;
+    }
+
+     bootbox.prompt({
+       title: "Enter a name for this song:",
+       centerVertical: true,
+       callback: (result) => { 
+          if (!result) return; 
+          setName = result;  
+          if (isOwner){
+            $.ajax({
+                url: '/updatesong/',
+                type: "POST",
+                data: {
+                  "songid": "{{ song.id | safe}}",
+                  "name": result,
+                  "data": window.localStorage.globalRec,
+                }
+            });
+          } else { 
+            handleNotOwner();
+          }
+        }
+     });
+     $('.bootbox-form input').val(setName || '{{ song.name }}');
+     $('.bootbox-form input').focus();
+  });
+
+  $('#placetitle').css({cursor: "pointer"});
+  $('#placetitle').click(() => {
+      window.location.href = "/";
+  });
+
+
+</script>

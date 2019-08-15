@@ -1,0 +1,429 @@
+<html>
+  <head>
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:100,200,300,400,500&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Encode+Sans:100,200,300,400,500&display=swap" rel="stylesheet">
+
+  <link href="/static/drop-theme-arrows-bounce-dark.css" rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/tether-drop/1.4.2/css/drop-theme-arrows.css" rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/tether-drop/1.4.2/css/drop-theme-basic.css" rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/tether-drop/1.4.2/css/drop-theme-hubspot-popovers.css" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.4/js/tether.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether-drop/1.4.2/js/drop.js"></script>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css" rel="stylesheet">     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>  <script>new WOW().init();</script>
+
+
+      <style>
+
+        @font-face{font-family:TT Norms;src:url(/static/TTNorms-Regular.woff2) format("woff2");font-display:block}@font-face{font-family:TT Norms Bold;src:url(/static/TTNorms-Bold.woff2) format("woff2");font-display:block}@font-face{font-family:TT Norms Medium;src:url(/static/TTNorms-Medium.woff2) format("woff2");font-display:block}
+
+
+          body {
+            background-color: rgb(19, 28, 47);
+          }
+
+          * {
+            font-family: "Nunito Sans", sans-serif !important;
+            color: white !important;
+          }
+
+       
+
+        .custom-navbar {
+          display: flex;
+          flex-direction: row;
+          margin-top: 25px;
+          margin-bottom: -25px;
+          justify-content: space-between;
+        }
+
+        #logo-icon {
+          width: 50px;
+          height: 50px;
+        }
+
+        #placetitle {
+          display: flex;
+          flex-direction: row;
+          margin-left: 50px;
+          
+        }
+
+        #mtitle {
+          font-size: 37.5px;
+          margin-left: 15px;
+        }
+
+        #sgnin {
+            font-size: 22.5px;
+            margin-right: 40px;
+            font-weight: 300;
+            opacity: 0.9;
+            cursor: pointer;
+            transition: 0.5s all; 
+        }
+
+        #signin:hover {
+          opacity: 1;
+        }
+
+        #notification {
+          width: 92%;
+
+          margin: 0px auto;
+          height: 67.5px;
+          border-radius: 12.5px;
+          background-color: #8c4dab;
+          margin-top: 70px;
+          align-items: center;
+          display: flex;
+          flex-direction: row;
+          cursor: pointer;
+          /* display: none; */
+        }
+
+        #notif {
+          width: 38.5px;
+          height: 38.5px;
+          margin-left: 27.5px;
+          margin-top: -4px;
+        }
+
+        #checkout {
+          font-family: TT Norms Bold !important;
+          margin-top: 3.5px;
+          margin-left: 7px;
+        }
+
+        #playnow {
+          margin-left: auto;
+          margin-right: 50px;
+          padding: 7.5px;
+          color: #8c4dab !important;
+          padding-left: 15px;
+          font-size: 17px;
+          padding-right: 15px;
+          background-color: white;
+          border: none;
+          outline: none;
+          font-family: TT Norms Bold !important;
+          border-radius: 7px;
+          cursor: pointer;
+
+          /* float: right; */
+        }
+
+        #mainSearch {
+            width: 82%;
+            margin-top: 50px;
+            margin-left: 3.8%;
+            box-shadow: 0 10px 30px 0 rgba(73,85,114,.05);
+            height: 85px;
+            background-color: rgba(12, 18, 33, 1);
+            border: 1px solid black;
+            border-radius: 2.5px;
+            font-size: 30px;
+            text-indent: 15px;
+            outline: none;
+            opacity: 0.7;
+            font-weight: 100;
+            color: rgba(255,255,255,0.8) !important;
+            /* transition: 0.5s all; */
+        }
+
+        #mainSearch:focus {
+          /* opacity: 1; */
+        }
+
+        .music-post {
+          width: 430px;
+          height: 230px;
+          border: 3px solid #0c1221;
+          margin-left: 3.5%;
+          margin-top: 60px;
+          border-radius: 5px;
+          display: flex;
+          flex-direction: column;
+          transition: 0.5s all;
+          cursor: pointer;
+
+          /* align-items: center; */
+        }
+
+        .music-post:hover {
+          transform: scale(1.01);
+        }
+
+        .postStar {
+          width: 45px;
+          height: 45px;
+          opacity: 0.2;
+          float: right;
+          margin: 15px;
+          transition: 0.5s opacity;
+          cursor: pointer;
+          margin-left: auto;
+          margin-right: 15px;
+        }
+
+       .music-post:hover  .postStar {
+          opacity: 0.35;
+        }
+
+        .postStar:hover {
+          opacity: 0.5 !important;
+        }
+
+        .playsong {
+          width: 70px;
+          height: 70px;
+          margin: 0px auto;
+          display: block;
+          opacity: 0.6;
+          cursor: pointer;
+          transition: 0.5s opacity;
+          margin-top: -20px;
+        }
+
+        .music-post:hover  .playsong {
+          opacity: 0.85;
+        }
+
+        .direction {
+            /* font-family: TT Norms Bold !important; */
+            font-size: 45px;
+            margin-left: 2.1%;
+            margin-top: 55px;
+            opacity: 0.8;
+            /* font-weight: 200; */
+
+        }
+
+        .topwatch {
+          background: rgba(255,255,255,0.35);
+          margin-top: 32.5px;
+        }
+
+        .post-title {
+          font-size: 25px;
+          text-align: center;
+          margin-top: 44px;
+          opacity: 0.4;
+          transition: 0.5s all;
+          /* margin-bottom: 10px; */
+
+        }
+
+        .music-post:hover .post-title {
+          opacity: 0.5;
+        }
+
+        .dmimg {
+          position: absolute;
+          width:  430px;
+          height: 240px;
+          /* padding-left: 20px; */
+          margin-top: -7.5px;
+          margin-left: -2.5px;
+          opacity: 0.05;
+          transition: 1s all;
+        }
+
+        .music-post:hover .dmimg {
+            opacity: 0.5;
+        }
+
+        .lrow {
+          margin-top: 30px;
+
+        }
+
+         #profilerow {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          margin-right: 20px;
+          /* box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.1); */
+          padding: 15px;
+          border-radius: 15px;
+          padding-left: 25px;
+          padding-right: 25px;
+          transition: 0.5s all;
+          margin-top: -19px;
+          cursor: pointer;
+        }
+
+        #profilerow:hover {
+          box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.1);
+        }
+
+        #profilepic {
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+          border: 2.5px solid #0c1221;
+        }
+
+        #uname {
+          font-size: 20px;
+          margin-left: 15px;
+          font-family: TT Norms Medium !important;
+          opacity: 0.8;
+        }
+
+        .sopt {
+            font-size: 18px;
+            font-family: TT Norms Medium !important;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: 0.5s all;
+        }
+
+        .sopt:hover {
+          opacity: 1;
+        }
+
+    
+
+        .menuhr {
+          background-color: rgba(255,255,255,0.2);
+        }
+
+        .drop-content {
+          background-color: #0c1221 !important;
+        }
+
+      </style>
+  </head>
+
+  <body>
+    <div>
+      <div class="custom-navbar">
+          <div id="placetitle">
+        <img id="logo-icon" src="https://i.redd.it/o6m7b0l6h6pz.gif"/>
+        <h1 id="mtitle">SynthSource</h2>
+        </div>
+         {% if user.is_authenticated %}
+        <div id="profilerow">
+        <img id="profilepic" src="/static/doctor.png"/>
+        <h3 id="uname">{{ user.username }}</h3>
+        </div>
+        {% else %}
+        <h1 class="wow fadeInUp"  id="sgnin">Sign In</h1>
+        {% endif %}
+      </div>
+
+      <div class="wow fadeInUp" id="notification">
+          <img id="notif" src="/static/exclamation.png"/>
+          <h3 id="checkout">Check out our SnythJam games!</h3>
+          <button id="playnow">Play now!</button>
+      </div> 
+
+        
+      <input class="wow fadeInUp" placeholder="Search Songs..." id="mainSearch" type="text"/>
+
+      <h1 class="direction wow fadeInUp">Top</h1>
+      <hr class="topwatch wow fadeInUp"/>
+
+      <div id="allContent" class="row">
+        {% for song in songs %}
+        <div data-song-id="{{ song.id }}" class="music-post wow fadeInUp">
+            <img class="dmimg" src="/static/songs.png"/>
+            <img class="postStar" src="/static/star.png"/>
+            <img class="playsong" src="/static/play4.png"/>
+            <h1 class="post-title">{{ song.name|upper }} by {{ song.author|upper }}</h1>
+        </div> 
+        {% endfor %}
+      </div>
+
+      
+      
+  </body> 
+
+</html>
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+<script>
+    document.getElementById('notification').addEventListener("click", function(e){
+      window.location.href = "/portal/";
+    });
+
+      try {
+
+   document.getElementById('sgnin').addEventListener("click", function(e){
+      window.location.href ="/login/"
+  });
+
+  } catch(e) {
+
+    var drop = new Drop({
+      target: document.querySelector('#profilerow'),
+      classes: 'drop-theme-arrows-bounce-dark',
+      position: 'bottom right',
+      openOn: 'hover',
+      constrainToWindow: true,
+      constrainToScrollParent: false,
+      content: `<div id="screenrow">
+          <h1 id="create/" class="sopt">Creator Studio</h1>
+          <hr class="menuhr"/>
+          <h1 id="explore/" class="sopt">Song Search</h1>
+          <hr class="menuhr"/>
+          <h1 id="start/" class="sopt">Music Lessons</h1>
+           <hr class="menuhr"/>
+          <h1 id="logout/" class="sopt">Logout</h1>
+      
+      </div>`
+    });
+
+    $(document).on('click', '.sopt', (e) => {
+        window.location.href = `/`+e.target.id;
+    })
+
+  }
+
+  $('#placetitle').css({cursor: "pointer"});
+  $('#placetitle').click(() => {
+      window.location.href = "/";
+  });
+
+  $('.music-post').click((e)=> {
+    let songID = e.target.getAttribute('data-song-id') || $(e.target).parent()[0].getAttribute('data-song-id');
+
+    window.location.href = "/editor/?q=" + songID;
+  });
+
+  $('#mainSearch').on('input', () => {
+      let mval = $('#mainSearch').val();
+      $.ajax({
+          url: `/search/?q=${mval}`,
+          type: "GET",
+          success: function(resp){
+            let holder = document.getElementById('allContent');
+            holder.innerHTML = ``;
+            for (let song of resp.songs){
+              holder.innerHTML += `<div data-song-id="${ song.id }" class="music-post wow fadeInUp">
+            <img class="dmimg" src="/static/songs.png"/>
+            <img class="postStar" src="/static/star.png"/>
+            <img class="playsong" src="/static/play4.png"/>
+            <h1 class="post-title">${ song.name.toUpperCase() } by ${ song.author.toUpperCase() }</h1>
+            </div>` 
+            }
+            
+          }
+      })
+  });
+</script>

@@ -1,0 +1,451 @@
+<html>
+  <head>
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:100,200,300,400,500&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Encode+Sans:100,200,300,400,500&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css" rel="stylesheet">
+    <link href="https://cdn.materialdesignicons.com/3.7.95/css/materialdesignicons.min.css" rel="stylesheet">
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <script src="/static/bootbox.js"></script>
+
+
+      <style>
+
+        @font-face{font-family:TT Norms;src:url(/static/TTNorms-Regular.woff2) format("woff2");font-display:block}@font-face{font-family:TT Norms Bold;src:url(/static/TTNorms-Bold.woff2) format("woff2");font-display:block}@font-face{font-family:TT Norms Medium;src:url(/static/TTNorms-Medium.woff2) format("woff2");font-display:block}
+
+
+          body {
+            background-color: rgb(19, 28, 47);
+          }
+
+          * {
+            font-family: "Nunito Sans", sans-serif !important;
+            color: white !important;
+          }
+
+               .custom-navbar {
+          display: flex;
+          flex-direction: row;
+          margin-top: 25px;
+          margin-bottom: -25px;
+          justify-content: space-between;
+        }
+
+        #logo-icon {
+          width: 50px;
+          height: 50px;
+        }
+
+        #placetitle {
+          display: flex;
+          flex-direction: row;
+          margin-left: 50px;
+          /* opacity: 0; */
+          
+        }
+
+        #mtitle {
+          font-size: 37.5px;
+          margin-left: 15px;
+        }
+
+        #sgnin {
+            font-size: 22.5px;
+            margin-right: 40px;
+            font-weight: 300;
+            opacity: 0.9;
+            cursor: pointer;
+            transition: 0.5s all; 
+            display: none;
+        }
+
+        #scorecount {
+          margin-right: 40px;
+          margin-bottom: -20px;
+          width: 220px;
+          height: 80px;
+          border-radius: 15px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 10px 30px 0 rgba(73,85,114,.22);
+          opacity: 0;
+
+        }
+
+        #signin:hover {
+          opacity: 1;
+        }
+
+        b { font-weight: bold; }
+
+	.key { position: absolute; font-family: Helvetica; font-weight: 100; font-size: 12px;
+		border: 1px solid rgba(32,32,32,0.2);
+		border-radius: 0px 0px 5px 5px;
+		cursor:pointer;
+		box-shadow: 0px 5px 1px rgba(32,32,32,0.2);
+		-webkit-transition: margin 0.05s ease, background-color 0.05s ease, box-shadow 0.05s ease; 
+    transition: 0.5s all;
+    }
+	.key:hover { opacity: 0.9; }
+		
+	.key .label { position: absolute; bottom: 5px; text-align: center; left: 0px; right: 0px; }
+
+	.black { background-color: rgb(32,32,32); color: #ffffff; z-index: 1; text-shadow: 0px -1px 1px rgba(255,255,255,0.5); }
+	
+	.white { background-color: #ffffff; color: rgb(32,32,32); z-index: 0; text-shadow: 0px 1px 1px rgba(32,32,32,0.5); }
+
+.keyboard-options { margin: 30px auto; width: auto; text-align: center; font-size: 12px; font-weight: 200; padding:10px; }
+
+	.keyboard-holder { margin: 30px auto; height: 200px; position:relative; user-select:none; -webkit-user-select:none;-moz-user-select:none;-o-user-select:none; margin-top: 85px;}
+
+  #keyboard {
+    padding-left: 40px;
+    margin-top: 30px;
+    opacity: 0;
+  }
+
+  #q-contain {
+    width: 1000px;
+    height: 450px;
+    margin: 0px auto;
+    /* border: 0.5px solid rgba(255,255,255,0.2); */
+    margin-top: 100px;
+
+  }
+
+  .q-title {
+    font-size: 30px;
+    margin-left: 25px;
+    margin-top: 25px;
+
+  }
+
+  .a-holder {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pretty {
+    margin-top: 35px;
+    margin-left: 50px;
+    font-size: 17.5px;
+  }
+
+  .optionText {
+    /* font-size: 17.5px; */
+  }
+
+  #continue {
+    background-color: #6fcaf7;
+    border: none;
+    outline: none;
+    padding: 12.5px;
+    padding-left: 25px;
+    padding-right: 25px;
+    box-shadow: 0 10px 30px 0 rgba(73,85,114,.22);
+    border-radius: 7.5px;
+    font-size: 18px;
+    cursor: pointer;
+    float: right;
+    margin-top: 45px;
+    margin-right: 60px;
+  }
+
+  #midsep {
+    background-color: rgb(15,15,15);
+    margin-top: -20px;
+  }
+
+  #scorelabel {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 5px;
+    /* font-family: TT Norms Medium !important; */
+  }
+
+   .modal-content {
+          background-color:  rgb(19, 28, 47);
+        }
+
+          .popupalert {
+      text-align: left;
+      margin-top: 12.5px;
+      margin-left: 10px;
+      font-size: 22px;
+      color: rgba(255,255,255,0.8) !important;
+      font-weight: 400;
+      /* font-family: TT Norms Bold !important; */
+
+    }
+
+        .toptitle {
+      font-size: 32.5px;
+      text-align: center;
+      color: white !important;
+      font-weight: 600;
+      box-shadow: 0px 10px 30px 0px rgb(0,0,0,0.145);
+      padding: 20px;
+      border-radius: 10px;
+
+    }
+
+        .rightimg {
+          width: 50px;
+          height: 50px;
+
+          /* box-shadow: 0px 10px 30px 0px rgb(0,0,0,0.11); */
+          /* padding: 20px; */
+          border-radius: 10px;
+
+
+
+        }
+
+        .inforow {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-evenly;
+          margin-top: 30px;
+          box-shadow: 0px 10px 30px 0px rgb(0,0,0,0.055); 
+          padding: 17.5px;
+          border-radius: 2.5px;
+
+        }
+
+        #startgame {
+          /* background-color: rgba(140, 77, 171, 0.2); */
+          outline: none;
+          margin: 0px auto;
+          border: none;
+          /* margin-top: 30px; */
+          margin-bottom: 25px;
+          padding-top: 30px;
+          padding-bottom: 10px;
+          padding-left: 20px;
+          padding-right: 20px;
+          background: transparent;
+          display: block;
+          /* font-family: TT Norms !important; */
+          cursor: pointer;
+          border-radius: 2.5px;
+          color: rgba(140, 77, 171, 1) !important;
+          width: 100%;
+          height: 60px;
+          font-size: 24.5px;
+          font-weight: 200;
+          /* box-shadow: 0px 10px 30px 0px rgb(0,0,0,0.11);  */
+          /* border: 25px red !important; */
+          display: none;
+        }
+
+        .modal-footer {
+          border-top: 1px solid rgba(255,255,255,0.05);
+          
+          /* margin-top: 0px; */
+
+        }
+
+        .bootbox-accept {
+          margin-top: 12px;
+          margin-bottom: 12px;
+          border: 1px solid rgba(140, 77, 171, 0.25);
+          padding-top: 11px;
+          padding-bottom: 11px;
+          padding-left: 21.5px;
+          padding-right: 21.5px;
+          /* background-color: rgb(19, 28, 47); */
+        }
+
+        </style>
+    </head>
+    <body>
+       <div class="custom-navbar">
+          <div id="placetitle">
+        <img id="logo-icon" src="https://i.redd.it/o6m7b0l6h6pz.gif"/>
+        <h1 id="mtitle">SynthSource</h2>
+        </div>
+        <h1 id="sgnin">Sign In</h1>
+        <div id="scorecount">
+            <h1 id="scorelabel">Score: <span id="scoreval">0</span> / 5</h1>
+        </div>
+      </div>
+
+      <div id="q-contain">
+
+        <h1 class="q-title">{{question}}</h1>
+
+       
+        <div class="a-holder">
+            
+            <div class="pretty p-icon p-round p-pulse">
+              <input type="checkbox" />
+              <div class="state p-success">
+                {% if correctIndex is 1 %}
+                <i class="icon mdi mdi-check"></i>
+                {% else %}
+                <i style="background-color: #fa4141 !important;" class="icon mdi mdi-close"></i>
+                {% endif %}
+                <label class="optionText">{{option1}}</label>
+              </div>
+            </div>
+
+            
+             <div class="pretty p-icon p-round p-pulse">
+              <input type="checkbox" />
+              <div class="state p-success">
+                {% if correctIndex is 2 %}
+                <i class="icon mdi mdi-check"></i>
+                {% else %}
+                <i style="background-color: #fa4141 !important;" class="icon mdi mdi-close"></i>
+                {% endif %}
+                <label class="optionText">{{option2}}</label>
+              </div>
+            </div>
+
+
+
+            <div class="pretty p-icon p-round p-pulse">
+              <input type="checkbox" />
+              <div class="state p-success">
+                {% if correctIndex is 3 %}
+                <i class="icon mdi mdi-check"></i>
+                {% else %}
+                <i style="background-color: #fa4141 !important;" class="icon mdi mdi-close"></i>
+                {% endif %}
+                <label class="optionText">{{option3}}</label>
+              </div>
+            </div>
+
+
+             <div class="pretty p-icon p-round p-pulse">
+              <input type="checkbox" />
+              <div class="state p-success">
+                {% if correctIndex is 4 %}
+                <i class="icon mdi mdi-check"></i>
+                {% else %}
+                <i style="background-color: #fa4141 !important;" class="icon mdi mdi-close"></i>
+                {% endif %}
+                <label class="optionText">{{option4}}</label>
+              </div>
+            </div>
+
+
+
+
+     
+        </div>
+
+     <button id="continue"> Continue →</button>
+
+        </div>
+
+      </div>
+
+      <div>
+        
+      <hr id="midsep" />
+       
+       <div class="keyboard-options">
+      <select style="display: none;" ID="sound">
+        <option value="0" selected>Keyboard</option>
+        <option value="1">Organ</option>
+          <option value="2">Acoustic Guitar</option>
+          <option value="3">EDM, bro!</option>
+      </select>
+      <div id="keyboard" class="keyboard-holder"></div>
+      <div class="keyboard-options" style="display: none;">
+      Range [C<span ID="OCTAVE_LOWER">3</span>-B<span ID="OCTAVE_UPPER">5</span>]
+      <input type="button" ID="-_OCTAVE" value="-" />
+      <input type="button" ID="+_OCTAVE" value="+" /><br />
+      <i>(Use left/right arrows to adjust with keyboard)</i>
+      </div>
+
+      </div>
+    </body> 
+</html> 
+<script src="/static/audiosynth.js"></script>
+<script src="/static/pianoview.js"></script>
+<script type="text/javascript">
+
+  var hasPlayed = false;
+  var a = new AudioSynthView();
+  a.draw();
+
+$('#scoreval').html(window.localStorage.quizScore);
+$('#scorecount, #keyboard').animate({opacity: 1}, {
+  duration: 1500,
+});
+
+   $('#placetitle').css({cursor: "pointer"});
+  $('#placetitle').click(() => {
+      window.location.href = "/";
+  });
+
+  $('input').click( (e) => {
+    hasPlayed = true;
+    let correct = !$(e.target).parent().find('.mdi-close').length;
+
+    $('.a-holder').css({'cursor': 'not-allowed'});
+    $('input').css({'cursor': 'not-allowed'});
+    $('input').click((e)=>{e.preventDefault()});
+    $('.pretty').animate({opacity: 0.6});
+    let mp = $('.a-holder').find('.mdi-check').parent().parent() 
+    mp.animate({opacity: 1}, {
+      complete: () => {
+         mp.find('input').prop('checked', true);
+      }
+    });
+
+    console.log(correct);
+
+    if (correct){
+      window.localStorage.setItem('quizScore', parseInt(window.localStorage.quizScore) + 1);
+      $('#scoreval').html(window.localStorage.quizScore);
+    }   
+
+  });
+
+  $('#continue').click( () => {
+        var currentSpot =  parseInt(window.location.href.match(/q=(\d)/)[1]);
+        if (currentSpot == 5){
+          bootbox.dialog({
+            message: `<h1 class="popupalert toptitle"><span class="words">Lesson Complete!</span></h1>
+            <div class="inforow">
+            <h1 class="popupalert">Your Score — ${window.localStorage.quizScore} / 5</h1>
+            <img class="rightimg" src="/static/trophy.png"/>
+            </div>          
+            `,
+            buttons: {
+            confirm: {
+                    label: '<i class="fa fa-check"></i> Home'
+                }
+            },
+            backdrop: true,
+            callback: () => {
+              //Respond...
+            }
+        });
+        $('.bootbox-accept, .bootbox-close-button').click( () => {
+          window.location.href = "/start/";
+        });
+
+        }  else {
+          if (hasPlayed){
+            let newQ = parseInt(window.location.href.match(/q=(\d)/)[1])+1;
+            window.location.href = window.location.href.replace(/q=\d/, 'q='+newQ)
+          }
+        }
+
+      
+  });
+</script>

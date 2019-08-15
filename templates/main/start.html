@@ -1,0 +1,381 @@
+<html>
+  <head>
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:100,200,300,400,500&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Encode+Sans:100,200,300,400,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Cairo|Exo+2&display=swap" rel="stylesheet">
+
+
+<link href="/static/drop-theme-arrows-bounce-dark.css" rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/tether-drop/1.4.2/css/drop-theme-arrows.css" rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/tether-drop/1.4.2/css/drop-theme-basic.css" rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/tether-drop/1.4.2/css/drop-theme-hubspot-popovers.css" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.4/js/tether.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether-drop/1.4.2/js/drop.js"></script>
+ 
+
+ 
+      <style>
+
+        @font-face{font-family:TT Norms;src:url(/static/TTNorms-Regular.woff2) format("woff2");font-display:block}@font-face{font-family:TT Norms Bold;src:url(/static/TTNorms-Bold.woff2) format("woff2");font-display:block}@font-face{font-family:TT Norms Medium;src:url(/static/TTNorms-Medium.woff2) format("woff2");font-display:block}
+
+
+          body {
+            background-color: rgb(19, 28, 47);
+          }
+
+          * {
+            font-family: "Nunito Sans", sans-serif !important;
+            color: white !important;
+          }
+
+               .custom-navbar {
+          display: flex;
+          flex-direction: row;
+          margin-top: 25px;
+          margin-bottom: -25px;
+          justify-content: space-between;
+        }
+
+        #logo-icon {
+          width: 50px;
+          height: 50px;
+        }
+
+        #placetitle {
+          display: flex;
+          flex-direction: row;
+          margin-left: 50px;
+          
+        }
+
+        #mtitle {
+          font-size: 37.5px;
+          margin-left: 15px;
+        }
+
+        #sgnin {
+            font-size: 22.5px;
+            margin-right: 40px;
+            font-weight: 300;
+            opacity: 0.9;
+            cursor: pointer;
+            transition: 0.5s all; 
+        }
+
+        #signin:hover {
+          opacity: 1;
+        }
+
+        .section-title {
+          font-family: 'Cairo' !important;
+          font-weight: 200;
+          margin-left: 2.5%;
+          margin-top: 85px;
+          opacity: 0.9;
+        }
+
+        .section-separator {
+          background-color: rgb(60,60,60);
+          width: 95%;
+          margin: 0px auto;
+          box-shadow: 0 10px 30px 0 rgba(255,255,255,.055);
+          height: 3px;
+          border-radius: 10px;
+          margin-top: 25px;
+        }
+
+        .section-content {
+          margin-top: 70px;
+        }
+
+        .section-val {
+          border: 3px solid rgb(40,40,40);
+          height: 160px; 
+          max-width: 400px;
+          min-width: 390px;
+          margin-top: 35px;
+          border-radius: 15px;
+          background-color: rgba(60,60,60, 0.15);
+          align-items: center;
+          display: flex;
+          margin-right: 60px;
+          cursor: pointer;
+          transition: 0.5s all;
+          opacity: 0.95;
+          /* box-shadow: 0 10px 30px 0 rgba(255,255,255,.0); */
+        }
+
+        .section-val:hover {
+           transform: scale(1.01);
+           opacity: 1;
+        }
+
+        .section-content {
+          width: 95%;
+          margin: 0px auto;
+        }
+
+        .section-img {
+          width: 100px;
+          height: 100px;
+
+          background-color: rgba(104, 194, 247, 1);
+          border: 3px solid #76a4d6;
+          border-radius: 15px;
+          padding: 10px;
+          margin-left: 20px;
+        }
+
+        .notes-music {
+            font-size: 30px;
+            opacity: 0.85;
+
+            text-align: center;
+        }
+
+        .current-status  {
+          font-size: 13px;
+          text-align: center;
+          opacity: 0.9;
+        }
+
+        .section-text {
+          margin-left: 32.5px;
+        }
+
+        .scolor {
+          /* color: #f2543f !important; */
+        }
+
+        #takequiz {
+          width: calc(300px/1.05);
+          height: calc(90px/1.05);
+          margin-top: 35px;
+          border: none;
+          outline: none;
+          background-color: rgba(60,60,60, 0.15);
+          border-radius: 10px;
+          border: 3px solid rgb(40,40,40);
+          margin-bottom: 60px;
+          font-size: 25px;
+          opacity: 0.85;
+          cursor: pointer;
+          /* font-family: TT Norms !important; */
+          transition: 1s all;
+          /* color: rgba(104, 194, 247, 1) !important; */
+        }
+
+        #takequiz:hover {
+          opacity: 1;
+          transform: scale(1.01);
+          /* border-width: 5px; */
+          /* color: rgba(104, 194, 247, 1) !important; */
+          /* background-color: rgba(255,255,255,0.8); */
+        }
+
+        .mltest {
+          margin-right: 8.5px;
+        }
+
+           #profilerow {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          margin-right: 20px;
+          /* box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.1); */
+          padding: 15px;
+          border-radius: 15px;
+          padding-left: 25px;
+          padding-right: 25px;
+          transition: 0.5s all;
+          margin-top: -19px;
+          cursor: pointer;
+        }
+
+        #profilerow:hover {
+          box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.1);
+        }
+
+        #profilepic {
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+          border: 2.5px solid #0c1221;
+        }
+
+        #uname {
+          font-size: 20px;
+          margin-left: 15px;
+          font-family: TT Norms Medium !important;
+          opacity: 0.8;
+        }
+
+        .sopt {
+            font-size: 18px;
+            font-family: TT Norms Medium !important;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: 0.5s all;
+        }
+
+        .sopt:hover {
+          opacity: 1;
+        }
+
+    
+
+        .menuhr {
+          background-color: rgba(255,255,255,0.2);
+        }
+
+        .drop-content {
+          background-color: #0c1221 !important;
+        }
+
+        #cclick {
+          font-weight: 300;
+          position: absolute;
+          right: 30px;
+          margin-top: 85px;
+          cursor: pointer;
+          font-family: TT Norms !important;
+          font-size: 30px;
+          color: rgb(119, 185, 232) !important;
+          cursor: pointer;
+          z-index: 100;
+        }
+
+  </style>
+  </head>
+  <body>
+     <div class="custom-navbar">
+          <div id="placetitle">
+        <img id="logo-icon" src="https://i.redd.it/o6m7b0l6h6pz.gif"/>
+        <h1 id="mtitle">SynthSource</h2>
+        </div>
+          {% if user.is_authenticated %}
+        <div id="profilerow">
+        <img id="profilepic" src="/static/doctor.png"/>
+        <h3 id="uname">{{ user.username }}</h3>
+        </div>
+        {% else %}
+        <h1 class="wow fadeInUp"  id="sgnin">Sign In</h1>
+        {% endif %}
+      </div>
+
+      <h1 id="cclick">World of Music »</h1>
+
+      {% for chapter in chapters %}
+      <div class="section">
+        <div class="section-header">
+          <h1 class="section-title">Chapter {{ chapter.title }}</h1>
+          <div class="section-separator"></div> 
+        </div>
+
+
+        
+
+          <div class="section-content row">
+            {% for section in chapter.values %}
+            <div data-quiz-id="{{ section.id }}" class="section-val col-sm-4 wow fadeInUp">
+                <img class="section-img" src="/static/music2.png"/>
+                <div  data-quiz-id="{{ section.id }}" class="section-text">
+                  <h1 class="notes-music">{{ section.name }}</h1>
+                  <h1 data-quiz-id="{{ section.id }}" class="current-status">Status: <span class="scolor">Not Completed</span></h1>
+                </div>
+            </div>
+             {% endfor %} 
+          </div>
+        
+       
+
+      </div> 
+      {% endfor %}
+
+            <div class="section">
+        <div class="section-header">
+          <h1 class="section-title">Song Trivia</h1>
+          <div class="section-separator"></div> 
+        </div>
+
+          <div class="section-content row">
+            <button id="takequiz"><span class="mltest">🎉</span>  Start Playing →</div>
+          </div>
+
+      </div> 
+
+      
+
+  </body>
+</html> 
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+<script>
+  Array.from(document.getElementsByClassName('section-val')).map(e => { e.addEventListener('click', function(e){
+      let quizID = e.target.getAttribute("data-quiz-id") ||  e.target.parentElement.getAttribute("data-quiz-id") 
+      window.localStorage.removeItem('quizScore');
+      window.localStorage.setItem('quizScore', '0');
+      window.location.href = `/learn/?q=1&id=${quizID}`;
+  })});
+
+  document.getElementById('takequiz').addEventListener('click', (e) => {
+      window.localStorage.removeItem('quizScore');
+      window.localStorage.setItem('quizScore', '0');
+
+      window.localStorage.removeItem('totalCount');
+      window.localStorage.setItem('totalCount', '0');
+
+      window.location.href = "/trivia/";
+  });
+
+  try {
+
+   document.getElementById('sgnin').addEventListener("click", function(e){
+      window.location.href ="/login/"
+  });
+
+  } catch(e) {
+
+    var drop = new Drop({
+      target: document.querySelector('#profilerow'),
+      classes: 'drop-theme-arrows-bounce-dark',
+      position: 'bottom right',
+      openOn: 'hover',
+      constrainToWindow: true,
+      constrainToScrollParent: false,
+      content: `<div id="screenrow">
+          <h1 id="create/" class="sopt">Creator Studio</h1>
+          <hr class="menuhr"/>
+          <h1 id="explore/" class="sopt">Song Search</h1>
+          <hr class="menuhr"/>
+          <h1 id="start/" class="sopt">Music Lessons</h1>
+           <hr class="menuhr"/>
+          <h1 id="logout/" class="sopt">Logout</h1>
+      
+      </div>`
+    });
+
+    $(document).on('click', '.sopt', (e) => {
+        window.location.href = `/`+e.target.id;
+    })
+
+  }
+
+   $('#placetitle').css({cursor: "pointer"});
+  $('#placetitle').click(() => {
+      window.location.href = "/";
+  });
+
+  $('#cclick').click( () => {
+      window.location.href = '/map/';
+  });
+
+</script>
+
